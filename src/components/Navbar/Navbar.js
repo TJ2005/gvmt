@@ -45,18 +45,22 @@ const FontSizeAdjuster = () => {
 };
 
 const Navbar = () => {
-  const [aboutAnchor, setAboutAnchor] = useState(null);
-  const [otherAnchor, setOtherAnchor] = useState(null);
+  const [gramPanchayatAnchor, setGramPanchayatAnchor] = useState(null);
+  const [schemesAnchor, setSchemesAnchor] = useState(null);
+  const [infoAnchor, setInfoAnchor] = useState(null);
   const [langAnchor, setLangAnchor] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { t } = useTranslation();
 
   // Dropdown handlers
-  const handleAboutOpen = (e) => setAboutAnchor(e.currentTarget);
-  const handleAboutClose = () => setAboutAnchor(null);
+  const handleGramPanchayatOpen = (e) => setGramPanchayatAnchor(e.currentTarget);
+  const handleGramPanchayatClose = () => setGramPanchayatAnchor(null);
 
-  const handleOtherOpen = (e) => setOtherAnchor(e.currentTarget);
-  const handleOtherClose = () => setOtherAnchor(null);
+  const handleSchemesOpen = (e) => setSchemesAnchor(e.currentTarget);
+  const handleSchemesClose = () => setSchemesAnchor(null);
+
+  const handleInfoOpen = (e) => setInfoAnchor(e.currentTarget);
+  const handleInfoClose = () => setInfoAnchor(null);
 
   const handleLangOpen = (e) => setLangAnchor(e.currentTarget);
   const handleLangClose = () => setLangAnchor(null);
@@ -125,53 +129,93 @@ const Navbar = () => {
 
             {/* Desktop Navigation Links */}
             <Box className="navbar-links">
-              <Button component={Link} to="/" color="inherit" className="nav-link active">
-                {t('navbar.home')}
+              <Button component={Link} to="/" color="inherit" className="nav-link">
+                मुख्यपृष्ठ
               </Button>
+
+              <Button component={Link} to="/about" color="inherit" className="nav-link">
+                आमच्याबद्दल
+              </Button>
+
               <Button
                 color="inherit"
                 endIcon={<KeyboardArrowDownIcon />}
-                onClick={handleAboutOpen}
+                onClick={handleGramPanchayatOpen}
                 className="nav-link"
               >
-                {t('navbar.about')}
+                ग्रामपंचायत
               </Button>
               <Menu
-                anchorEl={aboutAnchor}
-                open={Boolean(aboutAnchor)}
-                onClose={handleAboutClose}
+                anchorEl={gramPanchayatAnchor}
+                open={Boolean(gramPanchayatAnchor)}
+                onClose={handleGramPanchayatClose}
               >
-                <MenuItem component={Link} to="/about" onClick={handleAboutClose}>
-                  {t('navbar.introduction')}
+                <MenuItem component={Link} to="/grampanchayat" onClick={handleGramPanchayatClose}>
+                  ग्रामपंचायत
                 </MenuItem>
-                <MenuItem component={Link} to="/members" onClick={handleAboutClose}>
-                  {t('navbar.members')}
+                <MenuItem component={Link} to="/about-village" onClick={handleGramPanchayatClose}>
+                  पल्संबंधे
+                </MenuItem>
+                <MenuItem component={Link} to="/members" onClick={handleGramPanchayatClose}>
+                  ग्रामपंचायत सदस्य
+                </MenuItem>
+                <MenuItem component={Link} to="/documents" onClick={handleGramPanchayatClose}>
+                  ग्रामपंचायत दस्तऐवज
+                </MenuItem>
+                <MenuItem component={Link} to="/gallery" onClick={handleGramPanchayatClose}>
+                  गॅलरी
                 </MenuItem>
               </Menu>
+
               <Button
                 color="inherit"
                 endIcon={<KeyboardArrowDownIcon />}
+                onClick={handleSchemesOpen}
                 className="nav-link"
               >
-                शासकीय योजना
-              </Button>
-              <Button color="inherit" className="nav-link">संपर्क</Button>
-              <Button color="inherit" className="nav-link">उपयुक्त लिंक</Button>
-              <Button
-                color="inherit"
-                endIcon={<KeyboardArrowDownIcon />}
-                onClick={handleOtherOpen}
-                className="nav-link"
-              >
-                इतर
+                योजना
               </Button>
               <Menu
-                anchorEl={otherAnchor}
-                open={Boolean(otherAnchor)}
-                onClose={handleOtherClose}
+                anchorEl={schemesAnchor}
+                open={Boolean(schemesAnchor)}
+                onClose={handleSchemesClose}
               >
-                <MenuItem onClick={handleOtherClose}>Download</MenuItem>
-                <MenuItem onClick={handleOtherClose}>Feedback</MenuItem>
+                <MenuItem component={Link} to="/schemes" onClick={handleSchemesClose}>
+                  योजना
+                </MenuItem>
+                <MenuItem component={Link} to="/beneficiaries" onClick={handleSchemesClose}>
+                  लाभार्थी यादी
+                </MenuItem>
+                <MenuItem component={Link} to="/downloads" onClick={handleSchemesClose}>
+                  फॉर्म डाउनलोड
+                </MenuItem>
+              </Menu>
+
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                onClick={handleInfoOpen}
+                className="nav-link"
+              >
+                माहिती
+              </Button>
+              <Menu
+                anchorEl={infoAnchor}
+                open={Boolean(infoAnchor)}
+                onClose={handleInfoClose}
+              >
+                <MenuItem component={Link} to="/contact" onClick={handleInfoClose}>
+                  संपर्क
+                </MenuItem>
+                <MenuItem component={Link} to="/useful-links" onClick={handleInfoClose}>
+                  उपयुक्त लिंक
+                </MenuItem>
+                <MenuItem component={Link} to="/notices" onClick={handleInfoClose}>
+                  सूचना फलक / बातम्या
+                </MenuItem>
+                <MenuItem component={Link} to="/rti" onClick={handleInfoClose}>
+                  आरटीआय / पारदर्शकता
+                </MenuItem>
               </Menu>
             </Box>
 
@@ -186,7 +230,6 @@ const Navbar = () => {
               >
                 <MenuIcon />
               </IconButton>
-              {/* Helpline button */}
               <Button variant="outlined" className="helpline-btn">
                 <img src="/assets/icons/Contact.svg" alt="Helpline" className="helpline-icon" />
                 हेल्पलाईन नंबर
@@ -206,32 +249,45 @@ const Navbar = () => {
                   <CloseIcon />
                 </IconButton>
               </div>
-              <Typography variant="h6" className="menu-title">मेनू</Typography>
+              <Typography variant="h6" className="menu-title">
+                मेनू
+              </Typography>
             </div>
-            <div className="dropdown-grid">
-              <Button component={Link} to="/" className="grid-item">
-                {t('navbar.home')}
-              </Button>
-              <Button component={Link} to="/about" className="grid-item">
-                {t('navbar.introduction')}
-              </Button>
-              <Button className="grid-item">ग्रामपंचायत पळसखेड</Button>
-              <Button className="grid-item">योजना</Button>
-              <Button className="grid-item">संपर्क</Button>
-              
-              <Button className="grid-item">आमच्याबद्दल</Button>
-              <Button className="grid-item">ग्रामपंचायत सदस्य</Button>
-              <Button className="grid-item">लाभार्थी यादी</Button>
-              <Button className="grid-item">उपयुक्त लिंक</Button>
-              
-              <Button className="grid-item">शासकीय योजना</Button>
-              <Button className="grid-item">ग्रामपंचायत दस्तऐवज</Button>
-              <Button className="grid-item">फॉर्म डाउनलोड्स</Button>
-              <Button className="grid-item">सूचना फलक / बातम्या</Button>
-              
-              <Button className="grid-item">संपर्क</Button>
-              <Button className="grid-item">गॅलरी</Button>
-              <Button className="grid-item">आरटीआय / पारदर्शकता</Button>
+            <div className="mobile-links-container">
+              <div className="links-group">
+                {/* First Column */}
+                <ul className="mobile-links">
+                  <li><Button component={Link} to="/" onClick={toggleMobileMenu}>मुख्यपृष्ठ</Button></li>
+                  <li><Button component={Link} to="/about" onClick={toggleMobileMenu}>आमच्याबद्दल</Button></li>
+                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>शासकीय योजना</Button></li>
+                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>संपर्क</Button></li>
+                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>उपयुक्त लिंक</Button></li>
+                </ul>
+
+                {/* Second Column */}
+                <ul className="mobile-links">
+                  <li><Button component={Link} to="/grampanchayat" onClick={toggleMobileMenu}>ग्रामपंचायत</Button></li>
+                  <li><Button component={Link} to="/about-village" onClick={toggleMobileMenu}>पल्संबंधे</Button></li>
+                  <li><Button component={Link} to="/members" onClick={toggleMobileMenu}>ग्रामपंचायत सदस्य</Button></li>
+                  <li><Button component={Link} to="/documents" onClick={toggleMobileMenu}>ग्रामपंचायत दस्तऐवज</Button></li>
+                  <li><Button component={Link} to="/gallery" onClick={toggleMobileMenu}>गॅलरी</Button></li>
+                </ul>
+
+                {/* Third Column */}
+                <ul className="mobile-links">
+                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>योजना</Button></li>
+                  <li><Button component={Link} to="/beneficiaries" onClick={toggleMobileMenu}>लाभार्थी यादी</Button></li>
+                  <li><Button component={Link} to="/downloads" onClick={toggleMobileMenu}>फॉर्म डाउनलोड</Button></li>
+                </ul>
+
+                {/* Fourth Column */}
+                <ul className="mobile-links">
+                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>संपर्क</Button></li>
+                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>उपयुक्त लिंक</Button></li>
+                  <li><Button component={Link} to="/notices" onClick={toggleMobileMenu}>सूचना फलक / बातम्या</Button></li>
+                  <li><Button component={Link} to="/rti" onClick={toggleMobileMenu}>आरटीआय / पारदर्शकता</Button></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

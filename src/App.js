@@ -10,6 +10,7 @@ import NoticeNewsCards from './components/NoticeNewsCards/NoticeCards';
 import Footer from './components/Footer/Footer'; // Footer component
 import Map from './components/Map/map'; // Map component
 import AboutUs from './components/AboutUs/AboutUs';
+import AboutTeam from './components/AboutTeam/AboutTeam';
 // Importing Bootstrap CSS for styling
 // Footer to be added later
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -56,6 +57,7 @@ function App() {
               </>
             } />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/members" element={<AboutTeam />} />
             {/* Add more routes as needed */}
           </Routes>
           <Footer />

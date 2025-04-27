@@ -27,6 +27,7 @@
 }
 
 .carousel-fullwidth {
+  margin-top: 2em;
   position: relative; /* This is crucial! */
 }
 

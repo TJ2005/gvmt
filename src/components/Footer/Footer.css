@@ -1,14 +1,12 @@
 /* Footer Main Styles */
 .footer {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin-top: 40px;
-    font-size: var(--font-size-base);
   }
   
   .footer-main {
-    background: #F9F9F9;
-    padding: 48px 0;
-    border-top: 1px solid #e0e0e0;
+    background: #fff;
+    padding: 40px 0;
   }
   
   /* Reusing the main-content class from your navbar */
@@ -25,36 +23,40 @@
   .footer-logo {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 32px;
   }
   
   .footer-emblem {
-    height: 36px;
+    height: 45px;
     margin-right: 16px;
   }
   
   .footer-title {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
   
   .footer-site-title {
-    font-size: var(--font-size-md) !important;
-    font-weight: bold !important;
-    font-family: 'Inter', sans-serif !important;
-    color: #222;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    color: #000;
+    margin-bottom: 4px !important;
   }
   
-  .footer-title > .MuiTypography-caption {
-    font-size: var(--font-size-sm) !important;
-    color: #003087 !important;
-    font-family: 'Inter', sans-serif !important;
+  .footer-subtitle {
+    font-size: 14px !important;
+    color: #666 !important;
+    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   }
   
   /* Contact Information */
-  .footer-contact-info {
-    margin-top: 16px;
+  .contact-heading {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    color: #000;
+    margin-bottom: 16px !important;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   }
   
   .contact-item {
@@ -63,6 +65,13 @@
     margin-bottom: 12px;
     color: #444;
     font-size: 14px;
+    line-height: 1.5;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 500;
+  }
+  
+  .contact-item span strong {
+    font-weight: 700;
   }
   
   .contact-icon {
@@ -72,26 +81,14 @@
     margin-top: 2px;
   }
   
-  /* Footer Headings */
-  .footer-heading {
-    font-size: var(--font-size-md) !important;
-    font-weight: 600 !important;
-    margin-bottom: 16px !important;
-    color: #222;
-    font-family: 'Inter', sans-serif !important;
-    position: relative;
-    padding-bottom: 8px;
+  .email-link {
+    color: #1a73e9 !important;
+    text-decoration: none !important;
+    font-weight: 500;
   }
   
-  .footer-heading::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    background: #1A73E9;
-    border-radius: 1px;
+  .email-link:hover {
+    text-decoration: underline !important;
   }
   
   /* Footer Links */
@@ -99,39 +96,25 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-top: 8px;
   }
   
   .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
   }
   
   .footer-links a {
     color: #444;
     text-decoration: none;
-    font-size: var(--font-size-sm);
+    font-size: 14px;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
     transition: color 0.2s;
-    display: inline-block;
-    position: relative;
+    line-height: 1.6;
   }
   
   .footer-links a:hover {
-    color: #1A73E9;
-  }
-  
-  .footer-links a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -2px;
-    height: 1px;
-    width: 0;
-    background: #1A73E9;
-    transition: width 0.2s;
-  }
-  
-  .footer-links a:hover::after {
-    width: 100%;
+    color: #1a73e9;
   }
   
   /* Social Links */
@@ -151,7 +134,7 @@
     display: flex;
     align-items: center;
     font-size: 14px !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   }
   
   .btn-icon {
@@ -177,15 +160,17 @@
   
   /* Copyright Bar */
   .copyright-bar {
-    background: #1A73E9;
+    background: #1a73e9;
     padding: 16px 0;
     color: white;
+    margin-bottom: 16px;
   }
   
   .copyright-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
   
   .copyright-left {
@@ -199,8 +184,9 @@
   
   .footer-policy-link {
     color: white !important;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 14px;
+    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     transition: opacity 0.2s;
   }
   
@@ -211,94 +197,65 @@
   .copyright-divider {
     width: 1px;
     height: 14px;
-    background: rgba(255, 255, 255, 0.6);
-    margin: 0 12px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 16px;
   }
 
-  .footer-subtitle{
-    font-family: Roboto;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 25.6px;
-    letter-spacing: 0%;
-    padding-bottom:0.8em;
-    border-bottom: #222 solid 1px;
-
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 1370px) {
-    .footer-main {
-      padding: 40px 0;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .main-content {
-      padding-left: 4%;
-      padding-right: 4%;
-    }
-    
+  /* Responsive Adjustments */
+  @media (max-width: 900px) {
     .footer-main {
       padding: 32px 0;
     }
     
+    .main-content {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+    
+    .footer-logo {
+      margin-bottom: 24px;
+    }
+    
     .footer-emblem {
-      height: 28px;
-      margin-right: 8px;
+      height: 40px;
     }
-    
-    .footer-site-title {
-      font-size: 16px !important;
+
+    .footer-links-container {
+      justify-content: flex-start;
     }
-    
-    .footer-title > .MuiTypography-caption {
-      font-size: 12px !important;
-    }
-    
-    .footer-heading {
-      font-size: 16px !important;
-    }
-    
-    .contact-item, 
-    .footer-links a {
-      font-size: 13px;
-    }
-    
-    .contact-icon {
-      height: 16px;
-      width: 16px;
-      margin-right: 8px;
-    }
-    
-    .map-btn {
-      padding: 8px 16px !important;
-      font-size: 13px !important;
-    }
-    
-    .social-icons {
-      gap: 12px;
-    }
-    
-    .social-icon {
-      height: 20px;
-      width: 20px;
-    }
-    
-    .copyright-content {
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-    }
-    
-    .copyright-left, .copyright-right {
-      width: 100%;
-      justify-content: center;
-    }
-    
-    .footer-policy-link, 
-    .copyright-left .MuiTypography-body2 {
-      font-size: 12px;
+
+    .footer-links-container .footer-section {
+      margin-bottom: 16px;
     }
   }
+  
+  @media (max-width: 600px) {
+    .copyright-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+    }
+
+    .footer-links-container .grid-container {
+      margin-top: 24px;
+    }
+  }
+  .bar::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin-top: 1em;
+  }
+
+  .footer-links-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .footer-links-container .footer-section {
+    margin-bottom: 24px;
+  }
+
   

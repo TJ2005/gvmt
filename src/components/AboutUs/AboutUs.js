@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './AboutUs.css';
-import { Grid, Typography, Card, CardContent } from '@mui/material';
+import { Typography } from '@mui/material';
 
 const AboutUs = () => {
   const { t } = useTranslation();
@@ -21,6 +21,21 @@ const AboutUs = () => {
       title: "शाळा व अंगणवाडी",
       description: "जिल्हा परिषद शाळा व अंगणवाडीला सौंदर्यीकरण व सुविधा.",
       image: "/assets/images/projects/project3.png"
+    },
+    {
+      title: "मुख्य रस्त्याचे बांधकाम",
+      description: "पळसखेड नागो काळापूर मुख्य गावा पर्यंत",
+      image: "/assets/images/projects/project4.png"
+    },
+    {
+      title: "ग्रामपंचायत इमारत",
+      description: "ग्रामपंचायत इमारतीचे सुशोभीकरण व सुरक्षा",
+      image: "/assets/images/projects/project5.png"
+    },
+    {
+      title: "इतर विकास कामे",
+      description: "मागमंद येथे बकरीचे वसतीगृह, हनुमान मंदिर मोठा योजना, फळबाग योजना",
+      image: "/assets/images/projects/project6.png"
     }
   ];
 
@@ -34,15 +49,15 @@ const AboutUs = () => {
       {/* Statistics */}
       <div className="stats-section">
         <div className="stat-item">
-          <Typography variant="h6">गावाची लोकसंख्या : 1500</Typography>
-          <Typography>स्त्री == पुरुष ==</Typography>
-          <Typography>एकूण घरे : 200</Typography>
+          <Typography variant="h6">गावाची लोकसंख्या : १५००</Typography>
+          <Typography variant="h6">स्त्री == पुरुष ==</Typography>
+          <Typography variant="h6">एकूण घरे : २००</Typography>
         </div>
       </div>
 
       <div className="description-section">
         <Typography>
-          ग्रामपंचायत पळसखेड नागो / नाईक, तालुका पंचायत समिती बुलढाणा, जिल्हा परिषद बुलढाणा अंतर्गत येणारे एक प्रगतशील व विकासाभिमुख गाव आहे. सुमारे 1500 लोकसंख्या असलेल्या या गावात सुमारे 200 घरे असून एकूण 3 वॉर्ड आणि 7 सदस्यांची ग्रामपंचायत कार्यरत आहे.
+          ग्रामपंचायत पळसखेड नागो / नाईक, तालुका पंचायत समिती बुलढाणा, जिल्हा परिषद बुलढाणा अंतर्गत येणारे एक प्रगतशील व विकासाभिमुख गाव आहे. सुमारे १५०० लोकसंख्या असलेल्या या गावात सुमारे २०० घरे असून एकूण ३ वॉर्ड आणि ७ सदस्यांची ग्रामपंचायत कार्यरत आहे.
         </Typography>
       </div>
 
@@ -75,19 +90,19 @@ const AboutUs = () => {
         <h2>विकासकामे</h2>
       </div>
 
-      <Grid container spacing={4} justifyContent="center" className="projects-grid">
-        {developmentProjects.map((project, index) => (
-          <Grid item key={index}>
-            <Card className="project-card">
+      <div className="projects-wrapper">
+        <div className="projects-grid">
+          {developmentProjects.map((project, index) => (
+            <div className="project-card" key={index}>
               <img src={project.image} alt={project.title} className="project-image" />
-              <CardContent>
-                <Typography variant="h6" className="project-title">{project.title}</Typography>
-                <Typography className="project-description">{project.description}</Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
+              <div className="project-content">
+                <div className="project-title">{project.title}</div>
+                <div className="project-description">{project.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* Note Section */}
       <div className="note-section">
