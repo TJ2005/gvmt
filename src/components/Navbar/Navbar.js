@@ -7,13 +7,13 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Box from "@mui/material/Box";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
-import Drawer from "@mui/material/Drawer";
+import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
 
 // Font size adjuster module
@@ -46,7 +46,7 @@ const Navbar = () => {
   const [aboutAnchor, setAboutAnchor] = useState(null);
   const [otherAnchor, setOtherAnchor] = useState(null);
   const [langAnchor, setLangAnchor] = useState(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Dropdown handlers
   const handleAboutOpen = (e) => setAboutAnchor(e.currentTarget);
@@ -58,14 +58,13 @@ const Navbar = () => {
   const handleLangOpen = (e) => setLangAnchor(e.currentTarget);
   const handleLangClose = () => setLangAnchor(null);
 
-  // Drawer handlers
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) return;
-    setDrawerOpen(open);
+  // Mobile menu handler
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
-    <div>
+    <div className="navbar-container">
       {/* Top Blue Bar */}
       <div className="top-blue-bar">
         <div className="main-content bluebar-content">
@@ -166,74 +165,66 @@ const Navbar = () => {
                 <MenuItem onClick={handleOtherClose}>Feedback</MenuItem>
               </Menu>
             </Box>
-            {/* Hamburger Menu Icon - Visible only on mobile */}
-            <div class="navbar-hamburger">
-            <IconButton
-              edge="end"
-              color="inherit"
-              aria-label="menu"
-              onClick={toggleDrawer(true)}
-              className="hamburger-icon"
-            >
-              <MenuIcon />
-            </IconButton>
-            {/* Helpline button always visible, even on mobile */}
-            <Button variant="outlined" className="helpline-btn">
-              <img src="Contact.svg" alt="Helpline" className="helpline-icon" />
-              हेल्पलाईन नंबर
-            </Button>
+
+            {/* Mobile Hamburger Menu and Helpline Button */}
+            <div className="navbar-hamburger">
+              <IconButton
+                edge="end"
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleMobileMenu}
+                className="hamburger-icon"
+              >
+                <MenuIcon />
+              </IconButton>
+              {/* Helpline button */}
+              <Button variant="outlined" className="helpline-btn">
+                <img src="Contact.svg" alt="Helpline" className="helpline-icon" />
+                हेल्पलाईन नंबर
+              </Button>
             </div>
           </Toolbar>
         </div>
       </AppBar>
-      {/* Mobile Drawer - No Helpline Button */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-        className="mobile-drawer"
-      >
-        <Box sx={{ width: 250 }} role="presentation">
-          <List className="drawer-list">
-            <ListItem className="drawer-list-item">
-              <Button color="inherit" className="drawer-nav-link active">मुखपृष्ठ</Button>
-            </ListItem>
-            <ListItem className="drawer-list-item">
-              <Button
-                color="inherit"
-                endIcon={<KeyboardArrowDownIcon />}
-                className="drawer-nav-link"
-              >
-                आमच्याबद्दल
-              </Button>
-            </ListItem>
-            <ListItem className="drawer-list-item">
-              <Button
-                color="inherit"
-                endIcon={<KeyboardArrowDownIcon />}
-                className="drawer-nav-link"
-              >
-                शासकीय योजना
-              </Button>
-            </ListItem>
-            <ListItem className="drawer-list-item">
-              <Button color="inherit" className="drawer-nav-link">संपर्क</Button>
-            </ListItem>
-            <ListItem className="drawer-list-item">
-              <Button color="inherit" className="drawer-nav-link">उपयुक्त लिंक</Button>
-            </ListItem>
-            <ListItem className="drawer-list-item">
-              <Button
-                color="inherit"
-                endIcon={<KeyboardArrowDownIcon />}
-                className="drawer-nav-link"
-              >
-                इतर
-              </Button>
-            </ListItem>
-          </List>
-        </Box>
-      </Drawer>
+
+      {/* Mobile Dropdown Menu */}
+      <Collapse in={mobileMenuOpen} className="mobile-dropdown-menu">
+        <div className="dropdown-overlay">
+          <div className="main-content">
+            <div className="dropdown-header">
+              <div className="close-button-container">
+                <IconButton onClick={toggleMobileMenu} className="close-button">
+                  <CloseIcon />
+                </IconButton>
+              </div>
+              <Typography variant="h6" className="menu-title">मेनू</Typography>
+            </div>
+            <div className="dropdown-grid">
+              <div className="grid-column">
+                <Button className="grid-item">मुखपृष्ठ</Button>
+                <Button className="grid-item">आमच्याबद्दल</Button>
+                <Button className="grid-item">शासकीय योजना</Button>
+                <Button className="grid-item">संपर्क</Button>
+                <Button className="grid-item">उपयुक्त लिंक</Button>
+              </div>
+              <div className="grid-column">
+                <Button className="grid-item">ग्रामपंचायत सदस्य</Button>
+                <Button className="grid-item">ग्रामपंचायत दस्तऐवज</Button>
+                <Button className="grid-item">गॅलरी</Button>
+              </div>
+              <div className="grid-column">
+                <Button className="grid-item">योजना</Button>
+                <Button className="grid-item">लाभार्थी यादी</Button>
+                <Button className="grid-item">फॉर्म डाउनलोड्स</Button>
+              </div>
+              <div className="grid-column">
+                <Button className="grid-item">सूचना फलक / बातम्या</Button>
+                <Button className="grid-item">आरटीआय / पारदर्शकता</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Collapse>
     </div>
   );
 };

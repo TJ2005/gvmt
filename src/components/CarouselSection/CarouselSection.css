@@ -6,7 +6,7 @@
   .carousel-heading {
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: var(--font-size-xl);
     color: #5b4b1b;
     text-align: center;
     margin-bottom: 24px;
@@ -78,8 +78,10 @@
     .carousel-item{
       height: 120px;
     }
-  }/* Updated CSS */
-.scroll-container {
+  }
+
+  /* Updated CSS */
+  .scroll-container {
     overflow: hidden;
     width: 100%;
     position: relative;
@@ -90,6 +92,7 @@
     gap: 32px;
     width: max-content;
     will-change: transform;
+    transition: transform 0.1s linear;
   }
   
   /* Keep existing image styles */

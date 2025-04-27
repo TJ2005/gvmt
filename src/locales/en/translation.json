@@ -1,0 +1,39 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "governmentSchemes": "Government Schemes",
+    "contact": "Contact",
+    "usefulLinks": "Useful Links",
+    "other": "Other",
+    "download": "Download",
+    "feedback": "Feedback",
+    "helpline": "Helpline Number"
+  },
+  "footer": {
+    "contactInfo": "Contact Information",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "website": "Website",
+    "quickLinks": "Quick Links",
+    "aboutUs": "About Us",
+    "members": "Members",
+    "contact": "Contact",
+    "usefulLinks": "Useful Links",
+    "other": "Other",
+    "download": "Download",
+    "feedback": "Feedback",
+    "viewMap": "View Map",
+    "followUs": "Follow Us",
+    "copyright": "© 2025 Grampanchyat Palaskhed Nago / Naik. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "accessibility": "Accessibility"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "tryAgain": "Try Again"
+  }
+} 

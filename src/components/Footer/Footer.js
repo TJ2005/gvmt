@@ -4,11 +4,20 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Link from "@mui/material/Link";
+import { useTranslation } from 'react-i18next';
 import "./Footer.css";
+import { IconButton } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { Container } from "@mui/material";
 
 const Footer = () => {
   // Get current year for copyright
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="footer">
@@ -33,22 +42,22 @@ const Footer = () => {
                 </Box>
               </Box>
               <div className="footer-subtitle">
-              संपर्क:
+                {t('footer.contactInfo')}:
               </div>
               <div className="footer-contact-info">
                 <div className="contact-item">
-                  <img src="map.svg" alt="Address" className="contact-icon" />
+                  <img src="map.svg" alt={t('footer.address')} className="contact-icon" />
                   <span>
                     ग्रामपंचायत पळसखेडे नागो / नाईक, बुलढाणा, बुलढाणा - 444904, महाराष्ट्र.
                   </span>
                 </div>
                 <div className="contact-item">
-                  <img src="devices.svg" alt="Phone" className="contact-icon" />
-                  <span>दूरध्वनी: 1234567890</span>
+                  <img src="devices.svg" alt={t('footer.phone')} className="contact-icon" />
+                  <span>{t('footer.phone')}: 1234567890</span>
                 </div>
                 <div className="contact-item">
-                  <img src="Communication.svg" alt="Email" className="contact-icon" />
-                  <span>ई-मेल: grampanchyat@gmail.com</span>
+                  <img src="Communication.svg" alt={t('footer.email')} className="contact-icon" />
+                  <span>{t('footer.email')}: example@example.com</span>
                 </div>
               </div>
             </Grid>
@@ -57,12 +66,12 @@ const Footer = () => {
             <Grid item xs={12} sm={6} md={4} className="footer-section">
 
               <ul className="footer-links">
-                <li><Link href="#">मुखपृष्ठ</Link></li>
-                <li><Link href="#">आमच्याबद्दल</Link></li>
-                <li><Link href="#">शासकीय योजना</Link></li>
-                <li><Link href="#">संपर्क</Link></li>
-                <li><Link href="#">उपयुक्त लिंक</Link></li>
-                <li><Link href="#">सदस्य</Link></li>
+                <li><Link href="#">{t('navbar.home')}</Link></li>
+                <li><Link href="#">{t('navbar.about')}</Link></li>
+                <li><Link href="#">{t('navbar.governmentSchemes')}</Link></li>
+                <li><Link href="#">{t('navbar.contact')}</Link></li>
+                <li><Link href="#">{t('navbar.usefulLinks')}</Link></li>
+                <li><Link href="#">{t('footer.members')}</Link></li>
               </ul>
             </Grid>
 
@@ -93,8 +102,15 @@ const Footer = () => {
 
             {/* Connect Section */}
             <Grid item xs={12} sm={6} md={4} className="footer-section">
-              
+
+              <ul className="footer-links">
+                <li><Link href="#">महात्मा ज्योतिबा फुले योजना</Link></li>
+                <li><Link href="#">पंतप्रधान आवास योजना</Link></li>
+                <li><Link href="#">पंतप्रधान किसान सम्मान निधि</Link></li>
+                <li><Link href="#">पंतप्रधान फसल बीमा योजना</Link></li>
+              </ul>
             </Grid>
+
           </Grid>
         </div>
       </div>

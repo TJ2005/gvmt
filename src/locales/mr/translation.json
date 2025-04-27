@@ -1,0 +1,39 @@
+{
+  "navbar": {
+    "home": "मुखपृष्ठ",
+    "about": "आमच्याबद्दल",
+    "governmentSchemes": "शासकीय योजना",
+    "contact": "संपर्क",
+    "usefulLinks": "उपयुक्त लिंक",
+    "other": "इतर",
+    "download": "डाउनलोड",
+    "feedback": "अभिप्राय",
+    "helpline": "हेल्पलाईन नंबर"
+  },
+  "footer": {
+    "contactInfo": "संपर्क माहिती",
+    "address": "पत्ता",
+    "phone": "फोन",
+    "email": "ईमेल",
+    "website": "वेबसाइट",
+    "quickLinks": "त्वरित लिंक",
+    "aboutUs": "आमच्याबद्दल",
+    "members": "सदस्य",
+    "contact": "संपर्क",
+    "usefulLinks": "उपयुक्त लिंक",
+    "other": "इतर",
+    "download": "डाउनलोड",
+    "feedback": "अभिप्राय",
+    "viewMap": "नकाशा पहा",
+    "followUs": "आम्हाला फॉलो करा",
+    "copyright": "© 2025 ग्रामपंचायत पटसखेड नागो / नाईक. सर्व हक्क राखीव.",
+    "privacyPolicy": "गोपनीयता धोरण",
+    "termsOfUse": "वापरण्याच्या अटी",
+    "accessibility": "प्रवेशयोग्यता"
+  },
+  "common": {
+    "loading": "लोड होत आहे...",
+    "error": "एक त्रुटी आली",
+    "tryAgain": "पुन्हा प्रयत्न करा"
+  }
+} 
