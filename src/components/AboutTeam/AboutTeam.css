@@ -2,36 +2,38 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  align-items: center;
-  padding: 0 24px;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
-.top-row, .middle-row, .bottom-row {
+.top-row {
   display: flex;
-  gap: 32px;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.middle-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: center;
 }
 
 .member-card {
-  width: 261px;
-  height: 370px;
-  background: #FFFFFF;
-  border-radius: 8px;
+  width: 200px;
+  background: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.member-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .member-image {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
 }
 
@@ -42,42 +44,37 @@
 
 .member-role {
   font-family: 'Noto Sans Devanagari', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #000000;
+  font-size: 14px;
+  color: #666;
   margin-bottom: 4px;
 }
 
 .member-name {
   font-family: 'Noto Sans Devanagari', sans-serif;
   font-size: 16px;
-  color: #333333;
+  font-weight: 600;
+  color: #000;
 }
 
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .middle-row {
-    max-width: 900px;
-  }
-}
-
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .team-grid {
     gap: 24px;
   }
-  
-  .top-row, .middle-row, .bottom-row {
+
+  .top-row,
+  .middle-row,
+  .bottom-row {
+    flex-direction: column;
+    align-items: center;
     gap: 24px;
   }
-}
 
-@media (max-width: 600px) {
-  .team-grid {
-    padding: 0 16px;
-  }
-  
   .member-card {
     width: 100%;
-    max-width: 261px;
+    height:100%;
+  }
+
+  .member-image {
+    height: 100%;
   }
 } 
