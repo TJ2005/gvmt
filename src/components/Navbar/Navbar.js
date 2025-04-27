@@ -1,0 +1,241 @@
+import React, { useState, useEffect } from "react";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import Box from "@mui/material/Box";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import "./Navbar.css";
+
+// Font size adjuster module
+const FontSizeAdjuster = () => {
+  const [selected, setSelected] = useState("A");
+
+  useEffect(() => {
+    if (selected === "A-") document.documentElement.style.fontSize = "90%";
+    else if (selected === "A") document.documentElement.style.fontSize = "100%";
+    else if (selected === "A+") document.documentElement.style.fontSize = "110%";
+  }, [selected]);
+
+  return (
+    <div className="font-size-adjuster">
+      {["A-", "A", "A+"].map((size) => (
+        <button
+          key={size}
+          className={`font-size-btn${selected === size ? " selected" : ""}`}
+          onClick={() => setSelected(size)}
+          aria-label={size}
+        >
+          {size}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+const Navbar = () => {
+  const [aboutAnchor, setAboutAnchor] = useState(null);
+  const [otherAnchor, setOtherAnchor] = useState(null);
+  const [langAnchor, setLangAnchor] = useState(null);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Dropdown handlers
+  const handleAboutOpen = (e) => setAboutAnchor(e.currentTarget);
+  const handleAboutClose = () => setAboutAnchor(null);
+
+  const handleOtherOpen = (e) => setOtherAnchor(e.currentTarget);
+  const handleOtherClose = () => setOtherAnchor(null);
+
+  const handleLangOpen = (e) => setLangAnchor(e.currentTarget);
+  const handleLangClose = () => setLangAnchor(null);
+
+  // Drawer handlers
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) return;
+    setDrawerOpen(open);
+  };
+
+  return (
+    <div>
+      {/* Top Blue Bar */}
+      <div className="top-blue-bar">
+        <div className="main-content bluebar-content">
+          <div className="bluebar-left">
+            <img src="indian-flag.svg" alt="Indian Flag" className="flag-icon" />
+            <span className="govt-text">भारत सरकार</span>
+          </div>
+          <div className="bluebar-right">
+            <div className="bluebar-accessibility">
+              <img src="accessibility.svg" alt="Accessibility" className="bluebar-icon" />
+            </div>
+            <div className="bluebar-divider"></div>
+            <FontSizeAdjuster />
+            <div className="first bluebar-divider"></div>
+            <img src="regular.svg" alt="Regular" className="bluebar-icon" />
+            <div className="bluebar-divider"></div>
+            <Button
+              className="lang-btn"
+              endIcon={<ExpandMoreIcon />}
+              onClick={handleLangOpen}
+            >
+              मराठी
+            </Button>
+            <Menu
+              anchorEl={langAnchor}
+              open={Boolean(langAnchor)}
+              onClose={handleLangClose}
+            >
+              <MenuItem onClick={handleLangClose}>मराठी</MenuItem>
+              <MenuItem onClick={handleLangClose}>English</MenuItem>
+            </Menu>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
+      <AppBar position="static" color="default" elevation={1} className="navbar-appbar">
+        <div className="main-content">
+          <Toolbar disableGutters className="navbar-toolbar">
+            <div className="navbar-logo">
+              <img
+                src="national-emblem.svg"
+                alt="Government Emblem"
+                className="emblem"
+              />
+              <Box className="navbar-title">
+                <Typography variant="h6" component="div" className="site-title">
+                  ग्रामपंचायत पटसखेड नागो / नाईक
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  Grampanchyat Palaskhed Nago / Naik
+                </Typography>
+              </Box>
+            </div>
+
+            {/* Desktop Navigation Links */}
+            <Box className="navbar-links">
+              <Button color="inherit" className="nav-link active">मुखपृष्ठ</Button>
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                onClick={handleAboutOpen}
+                className="nav-link"
+              >
+                आमच्याबद्दल
+              </Button>
+              <Menu
+                anchorEl={aboutAnchor}
+                open={Boolean(aboutAnchor)}
+                onClose={handleAboutClose}
+              >
+                <MenuItem onClick={handleAboutClose}>परिचय</MenuItem>
+                <MenuItem onClick={handleAboutClose}>सदस्य</MenuItem>
+              </Menu>
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                className="nav-link"
+              >
+                शासकीय योजना
+              </Button>
+              <Button color="inherit" className="nav-link">संपर्क</Button>
+              <Button color="inherit" className="nav-link">उपयुक्त लिंक</Button>
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                onClick={handleOtherOpen}
+                className="nav-link"
+              >
+                इतर
+              </Button>
+              <Menu
+                anchorEl={otherAnchor}
+                open={Boolean(otherAnchor)}
+                onClose={handleOtherClose}
+              >
+                <MenuItem onClick={handleOtherClose}>Download</MenuItem>
+                <MenuItem onClick={handleOtherClose}>Feedback</MenuItem>
+              </Menu>
+            </Box>
+            {/* Hamburger Menu Icon - Visible only on mobile */}
+            <div class="navbar-hamburger">
+            <IconButton
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+              className="hamburger-icon"
+            >
+              <MenuIcon />
+            </IconButton>
+            {/* Helpline button always visible, even on mobile */}
+            <Button variant="outlined" className="helpline-btn">
+              <img src="Contact.svg" alt="Helpline" className="helpline-icon" />
+              हेल्पलाईन नंबर
+            </Button>
+            </div>
+          </Toolbar>
+        </div>
+      </AppBar>
+      {/* Mobile Drawer - No Helpline Button */}
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+        className="mobile-drawer"
+      >
+        <Box sx={{ width: 250 }} role="presentation">
+          <List className="drawer-list">
+            <ListItem className="drawer-list-item">
+              <Button color="inherit" className="drawer-nav-link active">मुखपृष्ठ</Button>
+            </ListItem>
+            <ListItem className="drawer-list-item">
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                className="drawer-nav-link"
+              >
+                आमच्याबद्दल
+              </Button>
+            </ListItem>
+            <ListItem className="drawer-list-item">
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                className="drawer-nav-link"
+              >
+                शासकीय योजना
+              </Button>
+            </ListItem>
+            <ListItem className="drawer-list-item">
+              <Button color="inherit" className="drawer-nav-link">संपर्क</Button>
+            </ListItem>
+            <ListItem className="drawer-list-item">
+              <Button color="inherit" className="drawer-nav-link">उपयुक्त लिंक</Button>
+            </ListItem>
+            <ListItem className="drawer-list-item">
+              <Button
+                color="inherit"
+                endIcon={<KeyboardArrowDownIcon />}
+                className="drawer-nav-link"
+              >
+                इतर
+              </Button>
+            </ListItem>
+          </List>
+        </Box>
+      </Drawer>
+    </div>
+  );
+};
+
+export default Navbar;

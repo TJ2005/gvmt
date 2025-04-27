@@ -1,0 +1,130 @@
+.carousel-section-outer {
+    background: #fafbfc;
+    padding: 32px 0 0 0;
+  }
+  
+  .carousel-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #5b4b1b;
+    text-align: center;
+    margin-bottom: 24px;
+    border-bottom: 2px solid #bfa14a;
+    display: inline-block;
+    padding-bottom: 4px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .carousel-center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carousel-row {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .overflow{
+      overflow: hidden;
+  }
+  
+  .carousel-img {
+    height: 350px; /* constant height */
+    width: auto;   /* natural image width */
+    background: #fff;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .carousel-img {
+      height: 250px;
+    }
+    .carousel-row {
+      gap: 18px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .carousel-img {
+      height: 160px;
+    }
+    .carousel-row {
+      gap: 8px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .carousel-row {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+    .carousel-img {
+      width: 90vw;
+      max-width: 350px;
+      height: 120px;
+    }
+    .carousel-item{
+      height: 120px;
+    }
+  }/* Updated CSS */
+.scroll-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  
+  .scroll-wrapper {
+    display: flex;
+    gap: 32px;
+    width: max-content;
+    will-change: transform;
+  }
+  
+  /* Keep existing image styles */
+  .carousel-img {
+    height: 350px;
+    width: auto;
+    box-shadow: 0px 2px 4px 0px #0000001A;
+    object-fit: cover;
+  }
+  
+  /* Add hover pause */
+  .scroll-container:hover .scroll-wrapper {
+    animation-play-state: paused;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1200px) {
+    .carousel-img { height: 250px; }
+    .scroll-wrapper { gap: 18px; }
+  }
+  
+  @media (max-width: 900px) {
+    .carousel-img { height: 160px; }
+    .scroll-wrapper { gap: 8px; }
+  }
+  
+  @media (max-width: 700px) {
+    .scroll-wrapper {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .carousel-img {
+      width: 90vw;
+      max-width: 350px;
+      height: 120px;
+    }
+  }
+  

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@400&display=swap');
+
+/* Applies 10% padding left and right to main content */
+.main-content {
+  padding-left: 10%;
+  padding-right: 10%;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Carousel container takes full width of main-content */
+.slider-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+.carousel-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+
+.carousel-fullwidth {
+  position: relative; /* This is crucial! */
+}
+
+.carousel-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.carousel-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+.carousel{
+  position: relative;
+}
+
+/* Carousel and image styles */
+.carousel,
+.carousel-inner,
+.carousel-item,
+.d-block.w-100 {
+  width: 100% !important;
+  min-width: 100% !important;
+  height: 500px;
+  max-height: 500px;
+}
+
+.d-block.w-100 {
+  object-fit: cover;
+  height: 500px;
+}
+
+/* Overlay and text styles */
+.slider-overlay {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+
+.slider-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.slider-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+/* Optional: vertical spacing above the carousel */
+.slider-outer {
+  padding-top: 4em;
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  .carousel-title, .slider-title {
+    font-size: 22px;
+  }
+
+  .carousel-subtitle, .slider-subtitle {
+    font-size: 12px;
+  }
+}

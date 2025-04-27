@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.cards-row {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.card-col {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px 0px #0000001A;
+  padding: 2em 2em 1.5em 2em;
+  flex: 1 1 0;
+  min-width: 320px;
+  max-width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: var(--font-size-base);
+}
+
+.card-title {
+  color: #8B5000 !important;
+  padding-bottom: 2.5em;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+
+.card-body {
+  color: #222;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+}
+
+.card-body hr {
+  margin: 1em 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+.section-divider {
+    width: 100%;
+    height: 2px;
+    background-color: #eee;
+    margin: 2em 0;
+}
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .cards-row {
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: stretch;
+  }
+}

@@ -1,0 +1,384 @@
+.main-content {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .bluebar-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .top-blue-bar {
+    background: #1A73E9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    height: 38px;
+  }
+  
+  .bluebar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flag-icon {
+    height: 18px;
+    margin-right: 8px;
+  }
+  
+  .govt-text {
+    color: #fff;
+    font-size: var(--font-size-sm);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+  }
+  
+  .bluebar-right {
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+  
+  .bluebar-icon {
+    height: 18px;
+    margin: 0 4px;
+  }
+  
+  .bluebar-accessibility {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+  
+  /* Font size adjuster */
+  .font-size-adjuster {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .font-size-btn {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0 1px;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  
+  .font-size-btn.selected {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
+  
+  .bluebar-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    margin: 0 10px;
+    align-self: center;
+    border: none;
+  }
+  
+  .lang-btn {
+    color: #fff !important;
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+  }
+  
+  .navbar-appbar {
+    background: #fff !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .navbar-toolbar {
+    min-height: 82 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    padding: 0 8px;
+  }
+  
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-right: 16px;
+  }
+  
+  .emblem {
+    height: 40px;
+    margin-right: 16px;
+  }
+  
+  .navbar-title, .site-title, .navbar-title > .MuiTypography-caption {
+    white-space: nowrap;
+    
+  }
+  
+  .navbar-title {
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+  }
+  
+  .site-title {
+    flex-direction: column;
+    justify-content: center;
+    font-size: var(--font-size-md) !important;
+    font-weight: bold !important;
+    width: 100%;
+    font-family: 'Inter', sans-serif !important;
+  }
+  
+  .navbar-title > .MuiTypography-caption {
+    font-size: var(--font-size-sm) !important;
+    color: #003087 !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+  
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .nav-link {
+    color: #222 !important;
+    text-transform: none !important;
+    font-size: var(--font-size-sm) !important;
+    font-weight: 500 !important;
+    padding: 0 10px !important;
+    font-family: 'Inter', sans-serif !important;
+    position: relative;
+    border-radius: 0 !important;
+    background: none !important;
+    transition: color 0.2s;
+  }
+  
+  .nav-link.active {
+    color: #222 !important;
+  }
+  
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #1A73E9;
+    border-radius: 1px;
+    transition: width 0.2s;
+  }
+  
+  .helpline-btn {
+    margin-left: 24px !important;
+    border-color: #1A73E9 !important;
+    color: #1A73E9 !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    background: #fff !important;
+  }
+  
+  .helpline-icon {
+    height: 20px;
+    margin-right: 8px;
+  }
+  
+  /* Hamburger menu and responsive styles */
+  .hamburger-icon {
+    display: none !important;
+  }
+  
+  @media (max-width: 1370px) {
+    .navbar-links {
+      display: none !important;
+    }
+    .hamburger-icon {
+      display: flex !important;
+      margin-left: auto;
+    }
+  }
+  
+  /* Drawer styles */
+  .drawer-list {
+    padding: 16px;
+  }
+  .drawer-list-item {
+    display: flex !important;
+    padding: 8px 0 !important;
+  }
+  .drawer-nav-link {
+    width: 100%;
+    justify-content: flex-start !important;
+    padding: 8px !important;
+    font-size: 14px !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #222 !important;
+    border-radius: 0 !important;
+    background: none !important;
+    position: relative;
+  }
+  .drawer-nav-link.active {
+    color: #222 !important;
+  }
+  .drawer-nav-link.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 2px;
+    background: #1A73E9;
+    border-radius: 1px;
+  }
+  
+  .navbar-hamburger {
+    display:flex;
+  }@media (max-width: 700px) {
+    .main-content {
+      padding-left: 4%;
+      padding-right: 4%;
+    }
+  
+    .top-blue-bar {
+      height: 42px;
+      padding: 0 8px;
+    }
+  
+    .bluebar-content {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .bluebar-left {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+    }
+  
+    .flag-icon {
+      width: 33px;
+      height: 22px;
+      margin-right: 8px;
+      display: block;
+    }
+  
+    .govt-text {
+      display: none; /* Hide on small screens */
+    }
+  
+    .bluebar-right {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+  
+    .bluebar-icon,
+    .bluebar-accessibility {
+      height: 14px;
+      width: 14px;
+    }
+
+    .bluebar-accessibility{
+        display: none;}
+  
+    .font-size-btn {
+      font-size: 12px;
+      padding: 1px 4px;
+    }
+    .first{
+        display: none;
+    }
+  
+    .lang-btn {
+      font-size: 14px !important;
+      min-width: unset;
+      padding: 0 4px !important;
+      line-height: 1;
+    }
+  
+    .navbar-toolbar {
+      min-height: 70px !important;
+      gap: 0.5em;
+      padding: 0 2px;
+    }
+  
+    .navbar-logo .emblem {
+      height: 26px;
+      margin-right: 8px;
+    }
+  
+    .navbar-title {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .site-title {
+      font-size: 18px !important;
+      font-weight: bold !important;
+      font-family: 'Inter', sans-serif !important;
+      line-height: 1.1;
+    }
+  
+    .navbar-title > .MuiTypography-caption {
+      font-size: 14px !important;
+      color: #003087 !important;
+      font-family: 'Inter', sans-serif !important;
+      line-height: 1.1;
+      margin-top: 2px;
+    }
+  
+    .nav-link,
+    .drawer-nav-link,
+    .helpline-btn {
+      font-size: 11px !important;
+      padding: 0 4px !important;
+    }
+  
+    .helpline-btn {
+      display: none !important; /* Hide call button on small screens */
+    }
+  
+    .helpline-icon {
+      height: 14px;
+      margin-right: 4px;
+    }
+  
+    .hamburger-icon {
+      display: flex !important;
+      margin-left: auto;
+    }
+  
+    .navbar-links {
+      display: none !important;
+    }
+  }
+  

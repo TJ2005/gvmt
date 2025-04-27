@@ -1,0 +1,82 @@
+:root {
+  /* Font size variables */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-md: 1.125rem;   /* 18px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 1.875rem;  /* 30px */
+  --font-size-3xl: 2.25rem;   /* 36px */
+  --font-size-4xl: 3rem;      /* 48px */
+  
+  /* Line height variables */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+}
+
+.main-content {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media (max-width: 600px) {
+  .main-content {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+}
+
+body{
+  background-color: #F9F9F9;
+}
+/* Updated CSS */
+.scroll-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.scroll-wrapper {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Keep existing image styles */
+.carousel-img {
+  height: 350px;
+  width: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  object-fit: cover;
+}
+
+/* Add hover pause */
+.scroll-container:hover .scroll-wrapper {
+  animation-play-state: paused;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .carousel-img { height: 250px; }
+  .scroll-wrapper { gap: 18px; }
+}
+
+@media (max-width: 900px) {
+  .carousel-img { height: 160px; }
+  .scroll-wrapper { gap: 8px; }
+}
+
+@media (max-width: 700px) {
+  .scroll-wrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .carousel-img {
+    width: 90vw;
+    max-width: 350px;
+    height: 120px;
+  }
+}
