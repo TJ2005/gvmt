@@ -44,7 +44,7 @@ export default function MapSection() {
             rel="noopener noreferrer"
             className="map-btn"
           >
-            <img src="map-pin.svg" alt="" className="map-btn-icon" />
+            <img src="/assets/icons/globe.svg" alt="" className="map-btn-icon" />
             गुगल मॅप वर पहा
           </a>
         </div>

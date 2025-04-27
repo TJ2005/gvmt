@@ -50,7 +50,13 @@ const Navbar = () => {
   const [infoAnchor, setInfoAnchor] = useState(null);
   const [langAnchor, setLangAnchor] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // Language change handler
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    handleLangClose();
+  };
 
   // Dropdown handlers
   const handleGramPanchayatOpen = (e) => setGramPanchayatAnchor(e.currentTarget);
@@ -93,15 +99,15 @@ const Navbar = () => {
               endIcon={<ExpandMoreIcon />}
               onClick={handleLangOpen}
             >
-              मराठी
+              {i18n.language === 'mr' ? 'मराठी' : 'English'}
             </Button>
             <Menu
               anchorEl={langAnchor}
               open={Boolean(langAnchor)}
               onClose={handleLangClose}
             >
-              <MenuItem onClick={handleLangClose}>मराठी</MenuItem>
-              <MenuItem onClick={handleLangClose}>English</MenuItem>
+              <MenuItem onClick={() => handleLanguageChange('mr')}>मराठी</MenuItem>
+              <MenuItem onClick={() => handleLanguageChange('en')}>English</MenuItem>
             </Menu>
           </div>
         </div>
@@ -250,42 +256,42 @@ const Navbar = () => {
                 </IconButton>
               </div>
               <Typography variant="h6" className="menu-title">
-                मेनू
+                {t('navbar.menu')}
               </Typography>
             </div>
             <div className="mobile-links-container">
               <div className="links-group">
                 {/* First Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/" onClick={toggleMobileMenu}>मुख्यपृष्ठ</Button></li>
-                  <li><Button component={Link} to="/about" onClick={toggleMobileMenu}>आमच्याबद्दल</Button></li>
-                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>शासकीय योजना</Button></li>
-                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>संपर्क</Button></li>
-                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>उपयुक्त लिंक</Button></li>
+                  <li><Button component={Link} to="/" onClick={toggleMobileMenu}>{t('navbar.home')}</Button></li>
+                  <li><Button component={Link} to="/about" onClick={toggleMobileMenu}>{t('navbar.about')}</Button></li>
+                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>{t('navbar.governmentSchemes')}</Button></li>
+                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>{t('navbar.contact')}</Button></li>
+                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>{t('navbar.usefulLinks')}</Button></li>
                 </ul>
 
                 {/* Second Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/grampanchayat" onClick={toggleMobileMenu}>ग्रामपंचायत</Button></li>
-                  <li><Button component={Link} to="/about-village" onClick={toggleMobileMenu}>पल्संबंधे</Button></li>
-                  <li><Button component={Link} to="/members" onClick={toggleMobileMenu}>ग्रामपंचायत सदस्य</Button></li>
-                  <li><Button component={Link} to="/documents" onClick={toggleMobileMenu}>ग्रामपंचायत दस्तऐवज</Button></li>
-                  <li><Button component={Link} to="/gallery" onClick={toggleMobileMenu}>गॅलरी</Button></li>
+                  <li><Button component={Link} to="/grampanchayat" onClick={toggleMobileMenu}>{t('navbar.gramPanchayat')}</Button></li>
+                  <li><Button component={Link} to="/about-village" onClick={toggleMobileMenu}>{t('navbar.aboutVillage')}</Button></li>
+                  <li><Button component={Link} to="/members" onClick={toggleMobileMenu}>{t('navbar.members')}</Button></li>
+                  <li><Button component={Link} to="/documents" onClick={toggleMobileMenu}>{t('navbar.documents')}</Button></li>
+                  <li><Button component={Link} to="/gallery" onClick={toggleMobileMenu}>{t('navbar.gallery')}</Button></li>
                 </ul>
 
                 {/* Third Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>योजना</Button></li>
-                  <li><Button component={Link} to="/beneficiaries" onClick={toggleMobileMenu}>लाभार्थी यादी</Button></li>
-                  <li><Button component={Link} to="/downloads" onClick={toggleMobileMenu}>फॉर्म डाउनलोड</Button></li>
+                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>{t('navbar.schemes')}</Button></li>
+                  <li><Button component={Link} to="/beneficiaries" onClick={toggleMobileMenu}>{t('navbar.beneficiaries')}</Button></li>
+                  <li><Button component={Link} to="/downloads" onClick={toggleMobileMenu}>{t('navbar.downloads')}</Button></li>
                 </ul>
 
                 {/* Fourth Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>संपर्क</Button></li>
-                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>उपयुक्त लिंक</Button></li>
-                  <li><Button component={Link} to="/notices" onClick={toggleMobileMenu}>सूचना फलक / बातम्या</Button></li>
-                  <li><Button component={Link} to="/rti" onClick={toggleMobileMenu}>आरटीआय / पारदर्शकता</Button></li>
+                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>{t('navbar.contact')}</Button></li>
+                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>{t('navbar.usefulLinks')}</Button></li>
+                  <li><Button component={Link} to="/notices" onClick={toggleMobileMenu}>{t('navbar.notices')}</Button></li>
+                  <li><Button component={Link} to="/rti" onClick={toggleMobileMenu}>{t('navbar.rti')}</Button></li>
                 </ul>
               </div>
             </div>

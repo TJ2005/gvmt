@@ -77,7 +77,17 @@
     "feedback": "Feedback",
     "helpline": "Helpline Number",
     "introduction": "Introduction",
-    "members": "Members"
+    "members": "Members",
+    "menu": "Menu",
+    "gramPanchayat": "Gram Panchayat",
+    "aboutVillage": "About Village",
+    "documents": "Documents",
+    "gallery": "Gallery",
+    "schemes": "Schemes",
+    "beneficiaries": "Beneficiaries List",
+    "downloads": "Downloads",
+    "notices": "Notices & News",
+    "rti": "RTI / Transparency"
   },
   "footer": {
     "contactInfo": "Contact Information",
