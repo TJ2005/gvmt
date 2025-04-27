@@ -15,17 +15,17 @@ export default function MapSection() {
         {/* Left: Contact Info */}
         <div className="map-contact">
           <div className="map-contact-item">
-            <img src="map.svg" alt="" className="map-icon" />
+            <img src="/assets/icons/map.svg" alt="" className="map-icon" />
             <span className="map-contact-text">
               ग्रामपंचायत पळसखेड नागो / नाईक, बुलढाणा, बुलढाणा - 444904, महाराष्ट्र.
             </span>
           </div>
           <div className="map-contact-item">
-            <img src="devices.svg" alt="" className="map-icon" />
+            <img src="/assets/icons/devices.svg" alt="" className="map-icon" />
             <span className="map-contact-text">दूरध्वनी: 1234567890</span>
           </div>
           <div className="map-contact-item">
-            <img src="Communication.svg" alt="" className="map-icon" />
+            <img src="/assets/icons/Communication.svg" alt="" className="map-icon" />
             <a
               href="mailto:grampanchyat@gmail.com"
               className="map-contact-link"

@@ -44,39 +44,3 @@ body{
   width: max-content;
   will-change: transform;
 }
-
-/* Keep existing image styles */
-.carousel-img {
-  height: 350px;
-  width: auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  object-fit: cover;
-}
-
-/* Add hover pause */
-.scroll-container:hover .scroll-wrapper {
-  animation-play-state: paused;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .carousel-img { height: 250px; }
-  .scroll-wrapper { gap: 18px; }
-}
-
-@media (max-width: 900px) {
-  .carousel-img { height: 160px; }
-  .scroll-wrapper { gap: 8px; }
-}
-
-@media (max-width: 700px) {
-  .scroll-wrapper {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .carousel-img {
-    width: 90vw;
-    max-width: 350px;
-    height: 120px;
-  }
-}

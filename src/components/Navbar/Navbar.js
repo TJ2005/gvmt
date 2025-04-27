@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -15,6 +16,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import CloseIcon from "@mui/icons-material/Close";
 import "./Navbar.css";
+import { useTranslation } from "react-i18next";
 
 // Font size adjuster module
 const FontSizeAdjuster = () => {
@@ -47,6 +49,7 @@ const Navbar = () => {
   const [otherAnchor, setOtherAnchor] = useState(null);
   const [langAnchor, setLangAnchor] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   // Dropdown handlers
   const handleAboutOpen = (e) => setAboutAnchor(e.currentTarget);
@@ -69,17 +72,17 @@ const Navbar = () => {
       <div className="top-blue-bar">
         <div className="main-content bluebar-content">
           <div className="bluebar-left">
-            <img src="indian-flag.svg" alt="Indian Flag" className="flag-icon" />
+            <img src="/assets/icons/indian-flag.svg" alt="Indian Flag" className="flag-icon" />
             <span className="govt-text">भारत सरकार</span>
           </div>
           <div className="bluebar-right">
             <div className="bluebar-accessibility">
-              <img src="accessibility.svg" alt="Accessibility" className="bluebar-icon" />
+              <img src="/assets/icons/accessibility.svg" alt="Accessibility" className="bluebar-icon" />
             </div>
             <div className="bluebar-divider"></div>
             <FontSizeAdjuster />
             <div className="first bluebar-divider"></div>
-            <img src="regular.svg" alt="Regular" className="bluebar-icon" />
+            <img src="/assets/icons/Regular.svg" alt="Regular" className="bluebar-icon" />
             <div className="bluebar-divider"></div>
             <Button
               className="lang-btn"
@@ -106,7 +109,7 @@ const Navbar = () => {
           <Toolbar disableGutters className="navbar-toolbar">
             <div className="navbar-logo">
               <img
-                src="national-emblem.svg"
+                src="/assets/icons/national-emblem.svg"
                 alt="Government Emblem"
                 className="emblem"
               />
@@ -122,22 +125,28 @@ const Navbar = () => {
 
             {/* Desktop Navigation Links */}
             <Box className="navbar-links">
-              <Button color="inherit" className="nav-link active">मुखपृष्ठ</Button>
+              <Button component={Link} to="/" color="inherit" className="nav-link active">
+                {t('navbar.home')}
+              </Button>
               <Button
                 color="inherit"
                 endIcon={<KeyboardArrowDownIcon />}
                 onClick={handleAboutOpen}
                 className="nav-link"
               >
-                आमच्याबद्दल
+                {t('navbar.about')}
               </Button>
               <Menu
                 anchorEl={aboutAnchor}
                 open={Boolean(aboutAnchor)}
                 onClose={handleAboutClose}
               >
-                <MenuItem onClick={handleAboutClose}>परिचय</MenuItem>
-                <MenuItem onClick={handleAboutClose}>सदस्य</MenuItem>
+                <MenuItem component={Link} to="/about" onClick={handleAboutClose}>
+                  {t('navbar.introduction')}
+                </MenuItem>
+                <MenuItem component={Link} to="/members" onClick={handleAboutClose}>
+                  {t('navbar.members')}
+                </MenuItem>
               </Menu>
               <Button
                 color="inherit"
@@ -179,7 +188,7 @@ const Navbar = () => {
               </IconButton>
               {/* Helpline button */}
               <Button variant="outlined" className="helpline-btn">
-                <img src="Contact.svg" alt="Helpline" className="helpline-icon" />
+                <img src="/assets/icons/Contact.svg" alt="Helpline" className="helpline-icon" />
                 हेल्पलाईन नंबर
               </Button>
             </div>
@@ -200,27 +209,29 @@ const Navbar = () => {
               <Typography variant="h6" className="menu-title">मेनू</Typography>
             </div>
             <div className="dropdown-grid">
-              <div className="grid-column">
-                <Button className="grid-item">मुखपृष्ठ</Button>
-                <Button className="grid-item">आमच्याबद्दल</Button>
-                <Button className="grid-item">शासकीय योजना</Button>
-                <Button className="grid-item">संपर्क</Button>
-                <Button className="grid-item">उपयुक्त लिंक</Button>
-              </div>
-              <div className="grid-column">
-                <Button className="grid-item">ग्रामपंचायत सदस्य</Button>
-                <Button className="grid-item">ग्रामपंचायत दस्तऐवज</Button>
-                <Button className="grid-item">गॅलरी</Button>
-              </div>
-              <div className="grid-column">
-                <Button className="grid-item">योजना</Button>
-                <Button className="grid-item">लाभार्थी यादी</Button>
-                <Button className="grid-item">फॉर्म डाउनलोड्स</Button>
-              </div>
-              <div className="grid-column">
-                <Button className="grid-item">सूचना फलक / बातम्या</Button>
-                <Button className="grid-item">आरटीआय / पारदर्शकता</Button>
-              </div>
+              <Button component={Link} to="/" className="grid-item">
+                {t('navbar.home')}
+              </Button>
+              <Button component={Link} to="/about" className="grid-item">
+                {t('navbar.introduction')}
+              </Button>
+              <Button className="grid-item">ग्रामपंचायत पळसखेड</Button>
+              <Button className="grid-item">योजना</Button>
+              <Button className="grid-item">संपर्क</Button>
+              
+              <Button className="grid-item">आमच्याबद्दल</Button>
+              <Button className="grid-item">ग्रामपंचायत सदस्य</Button>
+              <Button className="grid-item">लाभार्थी यादी</Button>
+              <Button className="grid-item">उपयुक्त लिंक</Button>
+              
+              <Button className="grid-item">शासकीय योजना</Button>
+              <Button className="grid-item">ग्रामपंचायत दस्तऐवज</Button>
+              <Button className="grid-item">फॉर्म डाउनलोड्स</Button>
+              <Button className="grid-item">सूचना फलक / बातम्या</Button>
+              
+              <Button className="grid-item">संपर्क</Button>
+              <Button className="grid-item">गॅलरी</Button>
+              <Button className="grid-item">आरटीआय / पारदर्शकता</Button>
             </div>
           </div>
         </div>

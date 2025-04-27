@@ -1,4 +1,5 @@
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -28,7 +29,7 @@ const Footer = () => {
             <Grid item xs={12} md={4} className="footer-section">
               <Box className="footer-logo">
                 <img
-                  src="national-emblem.svg"
+                  src="/assets/icons/national-emblem.svg"
                   alt="Government Emblem"
                   className="footer-emblem"
                 />
@@ -42,41 +43,42 @@ const Footer = () => {
                 </Box>
               </Box>
               <div className="footer-subtitle">
-                {t('footer.contactInfo')}:
+                संपर्क:
               </div>
               <div className="footer-contact-info">
                 <div className="contact-item">
-                  <img src="map.svg" alt={t('footer.address')} className="contact-icon" />
+                  <img src="/assets/icons/map.svg" alt="पत्ता" className="contact-icon" />
                   <span>
                     ग्रामपंचायत पळसखेडे नागो / नाईक, बुलढाणा, बुलढाणा - 444904, महाराष्ट्र.
                   </span>
                 </div>
                 <div className="contact-item">
-                  <img src="devices.svg" alt={t('footer.phone')} className="contact-icon" />
-                  <span>{t('footer.phone')}: 1234567890</span>
+                  <img src="/assets/icons/devices.svg" alt="फोन" className="contact-icon" />
+                  <span>फोन: 1234567890</span>
                 </div>
                 <div className="contact-item">
-                  <img src="Communication.svg" alt={t('footer.email')} className="contact-icon" />
-                  <span>{t('footer.email')}: example@example.com</span>
+                  <img src="/assets/icons/Communication.svg" alt="ईमेल" className="contact-icon" />
+                  <span>ईमेल: example@example.com</span>
                 </div>
               </div>
             </Grid>
             
             {/* Quick Links Section */}
             <Grid item xs={12} sm={6} md={4} className="footer-section">
-
+              <Typography variant="h6" className="footer-heading">
+                द्रुत दुवे
+              </Typography>
               <ul className="footer-links">
-                <li><Link href="#">{t('navbar.home')}</Link></li>
-                <li><Link href="#">{t('navbar.about')}</Link></li>
-                <li><Link href="#">{t('navbar.governmentSchemes')}</Link></li>
-                <li><Link href="#">{t('navbar.contact')}</Link></li>
-                <li><Link href="#">{t('navbar.usefulLinks')}</Link></li>
-                <li><Link href="#">{t('footer.members')}</Link></li>
+                <li><Link href="#">मुखपृष्ठ</Link></li>
+                <li><Link component={RouterLink} to="/about">परिचय</Link></li>
+                <li><Link href="#">शासकीय योजना</Link></li>
+                <li><Link href="#">संपर्क</Link></li>
+                <li><Link href="#">उपयुक्त लिंक</Link></li>
+                <li><Link href="#">सदस्य</Link></li>
               </ul>
             </Grid>
 
             <Grid item xs={12} sm={6} md={4} className="footer-section">
-
               <ul className="footer-links">
                 <li><Link href="#">ग्रामपंचायत पळसंबे</Link></li>
                 <li><Link href="#">ग्रामपंचायत सदस्य</Link></li>
@@ -102,7 +104,6 @@ const Footer = () => {
 
             {/* Connect Section */}
             <Grid item xs={12} sm={6} md={4} className="footer-section">
-
               <ul className="footer-links">
                 <li><Link href="#">महात्मा ज्योतिबा फुले योजना</Link></li>
                 <li><Link href="#">पंतप्रधान आवास योजना</Link></li>
@@ -110,7 +111,6 @@ const Footer = () => {
                 <li><Link href="#">पंतप्रधान फसल बीमा योजना</Link></li>
               </ul>
             </Grid>
-
           </Grid>
         </div>
       </div>

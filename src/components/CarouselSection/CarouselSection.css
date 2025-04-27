@@ -1,6 +1,7 @@
 .carousel-section-outer {
     background: #fafbfc;
-    padding: 32px 0 0 0;
+    padding: 32px 0;
+    overflow: hidden;
   }
   
   .carousel-heading {
@@ -48,35 +49,44 @@
   /* Responsive adjustments */
   @media (max-width: 1200px) {
     .carousel-img {
-      height: 250px;
+      height: 300px;
     }
     .carousel-row {
-      gap: 18px;
+      gap: 24px;
     }
   }
   
   @media (max-width: 900px) {
     .carousel-img {
-      height: 160px;
+      height: 250px;
     }
     .carousel-row {
-      gap: 8px;
+      gap: 16px;
     }
   }
   
   @media (max-width: 700px) {
     .carousel-row {
       flex-direction: column;
-      gap: 16px;
-      align-items: center;
+      gap: 12px;
     }
     .carousel-img {
-      width: 90vw;
-      max-width: 350px;
-      height: 120px;
+      height: 200px;
+      width: 300px;
     }
     .carousel-item{
-      height: 120px;
+      height: 100%;
+    }
+    .carousel-heading {
+      font-size: var(--font-size-lg);
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .carousel-img {
+      height: 180px;
+      width: 270px;
     }
   }
 
@@ -84,15 +94,13 @@
   .scroll-container {
     overflow: hidden;
     width: 100%;
-    position: relative;
+    padding: 20px 0;
   }
   
   .scroll-wrapper {
     display: flex;
     gap: 32px;
-    width: max-content;
     will-change: transform;
-    transition: transform 0.1s linear;
   }
   
   /* Keep existing image styles */
@@ -110,24 +118,37 @@
   
   /* Responsive adjustments */
   @media (max-width: 1200px) {
-    .carousel-img { height: 250px; }
-    .scroll-wrapper { gap: 18px; }
-  }
-  
-  @media (max-width: 900px) {
-    .carousel-img { height: 160px; }
-    .scroll-wrapper { gap: 8px; }
-  }
-  
-  @media (max-width: 700px) {
+    .scroll-container {
+      height: 300px;
+    }
     .scroll-wrapper {
-      flex-direction: column;
+      height: 300px;
       gap: 16px;
     }
     .carousel-img {
-      width: 90vw;
-      max-width: 350px;
-      height: 120px;
+      height: 100%;
+      width: 450px;
+    }
+    .carousel-heading {
+      font-size: var(--font-size-lg);
+      margin-bottom: 16px;
     }
   }
-  
+
+  @media (max-width: 900px) {
+    .scroll-wrapper {
+      gap: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .carousel-img {
+      height: 200px;
+    }
+    .scroll-wrapper {
+      gap: 16px;
+    }
+    .carousel-heading {
+      font-size: var(--font-size-lg);
+    }
+  }
