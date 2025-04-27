@@ -90,7 +90,6 @@
     font-weight: 700;
   }
   .contact-item span{
-    display: flex;
     gap:1px;
     padding-top: 4px;
   align-items: flex-start;
@@ -367,6 +366,15 @@
     .footer-links-container {
       display: none;
     }
+    .bar::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+      margin-top: 0em;
+    }
+  
   }
 
   

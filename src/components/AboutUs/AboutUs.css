@@ -62,7 +62,7 @@
 }
 
 .section-title {
-  color: #333;
+  color: #8B5000;
   font-weight: 600 !important;
   margin-bottom: 24px !important;
   padding-bottom: 12px;
@@ -244,20 +244,19 @@ img {
 .section-heading {
   width: 100%;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
   position: relative;
 }
 
 .section-heading h2 {
-  margin-top: 40px;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 24px;
   line-height: 38.4px;
-  color: #5b4b1b;
+  color: #8B5000;
   display: inline-block;
   position: relative;
-  padding-bottom: 8px;
+  padding-bottom: 16px;
 }
 
 .section-heading h2::after {
@@ -266,7 +265,7 @@ img {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 78vw;
+  width: 80vw;
   height: 2px;
   background-color: #bfa14a;
 }
@@ -274,15 +273,17 @@ img {
 .stats-section {
   width: 100%;
   text-align: center;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .stat-item {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+  font-family: 'Noto Sans Devanagari', sans-serif;
   font-size: 16px;
   line-height: 25.6px;
   margin-bottom: 20px;
+  text-align: center;
+  display: inline-block;
 }
 
 .description-section {
@@ -300,26 +301,36 @@ img {
 }
 
 .admin-item {
-  margin-bottom: 20px;
 }
 
 .admin-title {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 32px;
-  color: #333;
-  display: inline;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: 700 !important;
+  margin-right: 8px;
+  display: inline-block;
 }
 
 .admin-value {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 16px;
+  color: #000;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
-  color: #333;
-  display: inline;
-  margin-left: 8px;
+  display: inline-block;
+}
+
+.stat-item h6 {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 4px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.stat-item h6 span {
+  font-weight: 700;
 }
 
 .projects-wrapper {
@@ -369,9 +380,11 @@ img {
 
 .note-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 0;
   background: #fafbfc;
-  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 40px;
 }
 
@@ -381,6 +394,7 @@ img {
   font-size: 20px !important;
   line-height: 32px !important;
   max-width: 800px;
+  color: #8B5000;
   margin: 0 auto;
 }
 
@@ -391,8 +405,19 @@ img {
 }
 
 @media (max-width: 768px) {
+  .section-heading h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+  }
+  .admin-item{
+    margin: 0;
+  }
   .projects-wrapper {
-    padding: 0 16px;
+    padding: 0;
   }
   
   .projects-grid {
@@ -404,11 +429,20 @@ img {
 @media (max-width: 600px) {
   .section-heading h2 {
     font-size: 20px;
+    margin-top:10px;
     line-height: 32px;
-  }
 
+  }
+  .admin-section{
+    margin: 0;
+  }
+  .stats-section{
+    margin: 0;
+  }
   .stat-item, .description-section {
     font-size: 14px;
+    margin-bottom: 10px;
+
     line-height: 22.4px;
   }
 
@@ -437,5 +471,6 @@ img {
 
   .projects-grid {
     grid-template-columns: 1fr;
+    margin-bottom: 50px;
   }
 } 

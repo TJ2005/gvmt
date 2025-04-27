@@ -49,9 +49,18 @@ const AboutUs = () => {
       {/* Statistics */}
       <div className="stats-section">
         <div className="stat-item">
-          <Typography variant="h6">गावाची लोकसंख्या : १५००</Typography>
-          <Typography variant="h6">स्त्री == पुरुष ==</Typography>
-          <Typography variant="h6">एकूण घरे : २००</Typography>
+          <Typography variant="h6">
+            <span>गावाची लोकसंख्या</span> : १५००
+          </Typography>
+          <Typography variant="h6">
+            <span>स्त्री</span> : ७५०
+          </Typography>
+          <Typography variant="h6">
+            <span>पुरुष</span> : ७५०
+          </Typography>
+          <Typography variant="h6">
+            <span>एकूण घरे</span> : २००
+          </Typography>
         </div>
       </div>
 
