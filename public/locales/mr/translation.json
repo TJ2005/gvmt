@@ -72,7 +72,7 @@
     "governmentSchemes": "शासकीय योजना",
     "contact": "संपर्क",
     "usefulLinks": "उपयुक्त लिंक",
-    "other": "इतर",
+    "other": "माहिती",
     "download": "डाउनलोड",
     "feedback": "अभिप्राय",
     "helpline": "हेल्पलाईन नंबर",
@@ -80,6 +80,7 @@
     "members": "सदस्य",
     "menu": "मेनू",
     "gramPanchayat": "ग्रामपंचायत",
+    "palaskhedNago": "पळसखेड नागो / नाईक",
     "aboutVillage": "पल्संबंधे",
     "documents": "ग्रामपंचायत दस्तऐवज",
     "gallery": "गॅलरी",
@@ -87,7 +88,11 @@
     "beneficiaries": "लाभार्थी यादी",
     "downloads": "फॉर्म डाउनलोड",
     "notices": "सूचना फलक / बातम्या",
-    "rti": "आरटीआय / पारदर्शकता"
+    "rti": "आरटीआय / पारदर्शकता",
+    "indianFlag": "भारतीय ध्वज",
+    "govtOfIndia": "भारत सरकार",
+    "accessibility": "प्रवेशयोग्यता",
+    "regular": "नियमित दृश्य"
   },
   "footer": {
     "contactInfo": "संपर्क माहिती",

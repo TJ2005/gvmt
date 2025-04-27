@@ -20,12 +20,29 @@ import { useTranslation } from "react-i18next";
 
 // Font size adjuster module
 const FontSizeAdjuster = () => {
-  const [selected, setSelected] = useState("A");
+  const [selected, setSelected] = useState(() => {
+    // Get stored preference or default to "A"
+    return localStorage.getItem("fontSizePreference") || "A";
+  });
 
   useEffect(() => {
-    if (selected === "A-") document.documentElement.style.fontSize = "90%";
-    else if (selected === "A") document.documentElement.style.fontSize = "100%";
-    else if (selected === "A+") document.documentElement.style.fontSize = "110%";
+    // Store preference
+    localStorage.setItem("fontSizePreference", selected);
+
+    // Apply font size changes
+    if (selected === "A-") {
+      document.body.style.fontSize = "90%";
+      document.body.classList.remove("font-size-normal", "font-size-large");
+      document.body.classList.add("font-size-small");
+    } else if (selected === "A") {
+      document.body.style.fontSize = "100%";
+      document.body.classList.remove("font-size-small", "font-size-large");
+      document.body.classList.add("font-size-normal");
+    } else if (selected === "A+") {
+      document.body.style.fontSize = "110%";
+      document.body.classList.remove("font-size-small", "font-size-normal");
+      document.body.classList.add("font-size-large");
+    }
   }, [selected]);
 
   return (
@@ -35,7 +52,7 @@ const FontSizeAdjuster = () => {
           key={size}
           className={`font-size-btn${selected === size ? " selected" : ""}`}
           onClick={() => setSelected(size)}
-          aria-label={size}
+          aria-label={`Set font size to ${size === "A-" ? "small" : size === "A" ? "normal" : "large"}`}
         >
           {size}
         </button>
@@ -55,7 +72,7 @@ const Navbar = () => {
   // Language change handler
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
-    handleLangClose();
+    setLangAnchor(null);
   };
 
   // Dropdown handlers
@@ -82,17 +99,17 @@ const Navbar = () => {
       <div className="top-blue-bar">
         <div className="main-content bluebar-content">
           <div className="bluebar-left">
-            <img src="/assets/icons/indian-flag.svg" alt="Indian Flag" className="flag-icon" />
-            <span className="govt-text">भारत सरकार</span>
+            <img src="/assets/icons/indian-flag.svg" alt={t('navbar.indianFlag')} className="flag-icon" />
+            <span className="govt-text">{t('navbar.govtOfIndia')}</span>
           </div>
           <div className="bluebar-right">
             <div className="bluebar-accessibility">
-              <img src="/assets/icons/accessibility.svg" alt="Accessibility" className="bluebar-icon" />
+              <img src="/assets/icons/accessibility.svg" alt={t('navbar.accessibility')} className="bluebar-icon" />
             </div>
             <div className="bluebar-divider"></div>
             <FontSizeAdjuster />
             <div className="first bluebar-divider"></div>
-            <img src="/assets/icons/Regular.svg" alt="Regular" className="bluebar-icon" />
+            <img src="/assets/icons/Regular.svg" alt={t('navbar.regular')} className="bluebar-icon" />
             <div className="bluebar-divider"></div>
             <Button
               className="lang-btn"
@@ -125,7 +142,7 @@ const Navbar = () => {
               />
               <Box className="navbar-title">
                 <Typography variant="h6" component="div" className="site-title">
-                  ग्रामपंचायत पटसखेड नागो / नाईक
+                  {t('navbar.gramPanchayat')} {t('navbar.palaskhedNago')}
                 </Typography>
                 <Typography variant="caption" color="text.secondary">
                   Grampanchyat Palaskhed Nago / Naik
@@ -136,11 +153,11 @@ const Navbar = () => {
             {/* Desktop Navigation Links */}
             <Box className="navbar-links">
               <Button component={Link} to="/" color="inherit" className="nav-link">
-                मुख्यपृष्ठ
+                {t('navbar.home')}
               </Button>
 
               <Button component={Link} to="/about" color="inherit" className="nav-link">
-                आमच्याबद्दल
+                {t('navbar.about')}
               </Button>
 
               <Button
@@ -149,7 +166,7 @@ const Navbar = () => {
                 onClick={handleGramPanchayatOpen}
                 className="nav-link"
               >
-                ग्रामपंचायत
+                {t('navbar.gramPanchayat')}
               </Button>
               <Menu
                 anchorEl={gramPanchayatAnchor}
@@ -157,19 +174,19 @@ const Navbar = () => {
                 onClose={handleGramPanchayatClose}
               >
                 <MenuItem component={Link} to="/grampanchayat" onClick={handleGramPanchayatClose}>
-                  ग्रामपंचायत
+                  {t('navbar.gramPanchayat')}
                 </MenuItem>
                 <MenuItem component={Link} to="/about-village" onClick={handleGramPanchayatClose}>
-                  पल्संबंधे
+                  {t('navbar.aboutVillage')}
                 </MenuItem>
                 <MenuItem component={Link} to="/members" onClick={handleGramPanchayatClose}>
-                  ग्रामपंचायत सदस्य
+                  {t('navbar.members')}
                 </MenuItem>
                 <MenuItem component={Link} to="/documents" onClick={handleGramPanchayatClose}>
-                  ग्रामपंचायत दस्तऐवज
+                  {t('navbar.documents')}
                 </MenuItem>
                 <MenuItem component={Link} to="/gallery" onClick={handleGramPanchayatClose}>
-                  गॅलरी
+                  {t('navbar.gallery')}
                 </MenuItem>
               </Menu>
 
@@ -179,7 +196,7 @@ const Navbar = () => {
                 onClick={handleSchemesOpen}
                 className="nav-link"
               >
-                योजना
+                {t('navbar.schemes')}
               </Button>
               <Menu
                 anchorEl={schemesAnchor}
@@ -187,13 +204,13 @@ const Navbar = () => {
                 onClose={handleSchemesClose}
               >
                 <MenuItem component={Link} to="/schemes" onClick={handleSchemesClose}>
-                  योजना
+                  {t('navbar.schemes')}
                 </MenuItem>
                 <MenuItem component={Link} to="/beneficiaries" onClick={handleSchemesClose}>
-                  लाभार्थी यादी
+                  {t('navbar.beneficiaries')}
                 </MenuItem>
                 <MenuItem component={Link} to="/downloads" onClick={handleSchemesClose}>
-                  फॉर्म डाउनलोड
+                  {t('navbar.downloads')}
                 </MenuItem>
               </Menu>
 
@@ -203,7 +220,7 @@ const Navbar = () => {
                 onClick={handleInfoOpen}
                 className="nav-link"
               >
-                माहिती
+                {t('navbar.other')}
               </Button>
               <Menu
                 anchorEl={infoAnchor}
@@ -211,16 +228,16 @@ const Navbar = () => {
                 onClose={handleInfoClose}
               >
                 <MenuItem component={Link} to="/contact" onClick={handleInfoClose}>
-                  संपर्क
+                  {t('navbar.contact')}
                 </MenuItem>
                 <MenuItem component={Link} to="/useful-links" onClick={handleInfoClose}>
-                  उपयुक्त लिंक
+                  {t('navbar.usefulLinks')}
                 </MenuItem>
                 <MenuItem component={Link} to="/notices" onClick={handleInfoClose}>
-                  सूचना फलक / बातम्या
+                  {t('navbar.notices')}
                 </MenuItem>
                 <MenuItem component={Link} to="/rti" onClick={handleInfoClose}>
-                  आरटीआय / पारदर्शकता
+                  {t('navbar.rti')}
                 </MenuItem>
               </Menu>
             </Box>
@@ -237,8 +254,8 @@ const Navbar = () => {
                 <MenuIcon />
               </IconButton>
               <Button variant="outlined" className="helpline-btn">
-                <img src="/assets/icons/Contact.svg" alt="Helpline" className="helpline-icon" />
-                हेल्पलाईन नंबर
+                <img src="/assets/icons/Contact.svg" alt={t('navbar.helpline')} className="helpline-icon" />
+                {t('navbar.helpline')}
               </Button>
             </div>
           </Toolbar>

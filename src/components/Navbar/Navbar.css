@@ -1,6 +1,7 @@
 .navbar-container {
   position: relative;
   z-index: 1000;
+  font-size: var(--font-size-base);
 }
 
 .main-content {
@@ -61,32 +62,77 @@
   background: transparent;
 }
 
-/* Font size adjuster */
+/* Font size classes */
+body.font-size-small {
+  --font-size-base: 14px;
+  --font-size-sm: 12px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+}
+
+body.font-size-normal {
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+}
+
+body.font-size-large {
+  --font-size-base: 18px;
+  --font-size-sm: 16px;
+  --font-size-md: 20px;
+  --font-size-lg: 24px;
+  --font-size-xl: 28px;
+}
+
+/* Font size adjuster styles */
 .font-size-adjuster {
   display: flex;
   align-items: center;
-  background: transparent;
-  border-radius: 4px;
-  overflow: hidden;
+  gap: 4px;
 }
 
 .font-size-btn {
-  background: transparent;
+  background: none;
+  border: 1px solid transparent;
   color: #fff;
-  border: none;
-  font-weight: bold;
-  font-size: 16px;
-  margin: 0 1px;
-  padding: 2px 8px;
+  padding: 2px 6px;
   cursor: pointer;
+  border-radius: 4px;
   font-family: 'Inter', sans-serif;
-  border-radius: 2px;
-  transition: background 0.2s;
+  transition: all 0.2s ease;
+}
+
+.font-size-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .font-size-btn.selected {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Ensure text components use the CSS variables */
+.site-title {
+  font-size: var(--font-size-lg) !important;
+}
+
+.nav-link {
+  font-size: var(--font-size-base) !important;
+}
+
+.mobile-dropdown-menu {
+  font-size: var(--font-size-base);
+}
+
+.menu-title {
+  font-size: var(--font-size-lg) !important;
+}
+
+.mobile-links button {
+  font-size: var(--font-size-base) !important;
 }
 
 .bluebar-divider {

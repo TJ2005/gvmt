@@ -1,8 +1,10 @@
 // App.js
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 import Navbar from './components/Navbar/Navbar';
 import HeroSection from './components/HeroSection/HeroSection';
 import CarouselSection from './components/CarouselSection/CarouselSection';
@@ -14,7 +16,7 @@ import AboutTeam from './components/AboutTeam/AboutTeam';
 // Importing Bootstrap CSS for styling
 // Footer to be added later
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './styles/global.css'; // Import global CSS
 import './App.css';
 
 // Create a theme instance
@@ -40,29 +42,38 @@ const theme = createTheme({
   spacing: 8,
 });
 
+// Loading component
+const LoadingComponent = () => (
+  <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <CircularProgress />
+  </Box>
+);
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
-        <div className="app-bg">
-          <Navbar />
-          <Routes>
-            <Route path="/" element={
-              <>
-                <HeroSection />
-                <CarouselSection />
-                <NoticeNewsCards />
-                <Map />
-              </>
-            } />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/members" element={<AboutTeam />} />
-            {/* Add more routes as needed */}
-          </Routes>
-          <Footer />
-        </div>
-      </Router>
+      <Suspense fallback={<LoadingComponent />}>
+        <Router>
+          <div className="app-bg">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={
+                <>
+                  <HeroSection />
+                  <CarouselSection />
+                  <NoticeNewsCards />
+                  <Map />
+                </>
+              } />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/members" element={<AboutTeam />} />
+              {/* Add more routes as needed */}
+            </Routes>
+            <Footer />
+          </div>
+        </Router>
+      </Suspense>
     </ThemeProvider>
   );
 }

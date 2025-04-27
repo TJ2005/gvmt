@@ -1,4 +1,71 @@
 {
+  "about": {
+    "title": "About Us",
+    "description": "Grampanchayat Palaskhed Nago/Naik, located in Paithan Taluka of Aurangabad District, is a progressive village under the Zilla Parishad. With a population of approximately 1500 and 200 households, our village represents a thriving democratic community.",
+    "population": {
+      "total": "Total Population",
+      "value": "1,500"
+    },
+    "households": {
+      "total": "Total Households",
+      "value": "200"
+    },
+    "area": {
+      "total": "Total Area",
+      "value": "500 hectares"
+    },
+    "administration": {
+      "title": "Administrative Structure",
+      "sarpanch": "Sarpanch",
+      "sarpanchName": "Pooja Ashok Zhale",
+      "gramsevak": "Gram Sevak",
+      "gramsevakName": "Nitin Zhale",
+      "talathi": "Talathi",
+      "talathiName": "Prakash Patole"
+    },
+    "development": {
+      "title": "Development Projects",
+      "project1": {
+        "title": "Tanda Clean Village Scheme",
+        "description": "Various cleanliness programs and development initiatives for village sanitation."
+      },
+      "project2": {
+        "title": "Complete Water Pipeline Project",
+        "description": "Joint initiative by Zilla Parishad, community, and Gram Panchayat."
+      },
+      "project3": {
+        "title": "School and Anganwadi Development",
+        "description": "Collaborative effort for educational infrastructure improvement."
+      }
+    },
+    "note": "Grampanchayat Palaskhed Nago/Naik is recognized as a clean and beautiful village. Our primary responsibilities include citizen welfare, community development, and transparent administration."
+  },
+  "aboutUs": {
+    "statistics": {
+      "title": "Village Statistics",
+      "population": "Population",
+      "households": "Households",
+      "area": "Total Area"
+    },
+    "administration": {
+      "title": "Village Administration",
+      "sarpanch": "Sarpanch",
+      "deputySarpanch": "Deputy Sarpanch",
+      "gramsevak": "Gram Sevak",
+      "talathi": "Talathi"
+    },
+    "projects": {
+      "title": "Development Projects",
+      "ongoing": "Ongoing Projects",
+      "completed": "Completed Projects",
+      "planned": "Planned Projects",
+      "viewDetails": "View Details"
+    },
+    "note": {
+      "title": "Note from Administration",
+      "content": "We are committed to the development and welfare of our village. Through various initiatives and projects, we aim to improve the quality of life for all residents while preserving our cultural heritage."
+    }
+  },
   "navbar": {
     "home": "Home",
     "about": "About Us",
@@ -8,7 +75,19 @@
     "other": "Other",
     "download": "Download",
     "feedback": "Feedback",
-    "helpline": "Helpline Number"
+    "helpline": "Helpline Number",
+    "introduction": "Introduction",
+    "members": "Members",
+    "menu": "Menu",
+    "gramPanchayat": "Gram Panchayat",
+    "aboutVillage": "About Village",
+    "documents": "Documents",
+    "gallery": "Gallery",
+    "schemes": "Schemes",
+    "beneficiaries": "Beneficiaries List",
+    "downloads": "Downloads",
+    "notices": "Notices & News",
+    "rti": "RTI / Transparency"
   },
   "footer": {
     "contactInfo": "Contact Information",
@@ -26,10 +105,23 @@
     "feedback": "Feedback",
     "viewMap": "View Map",
     "followUs": "Follow Us",
-    "copyright": "© 2025 Grampanchyat Palaskhed Nago / Naik. All rights reserved.",
+    "copyright": "Grampanchyat Palaskhed Nago / Naik. All rights reserved.",
     "privacyPolicy": "Privacy Policy",
     "termsOfUse": "Terms of Use",
-    "accessibility": "Accessibility"
+    "accessibility": "Accessibility",
+    "govtEmblem": "Government Emblem",
+    "fullAddress": "Grampanchyat Palaskhed Nago / Naik, Buldhana, Buldhana - 444904, Maharashtra.",
+    "documents": "Documents",
+    "gallery": "Gallery",
+    "downloads": "Downloads",
+    "notices": "Notices & News",
+    "rti": "RTI / Transparency"
+  },
+  "schemes": {
+    "mjpScheme": "Mahatma Jyotiba Phule Scheme",
+    "pmayScheme": "Pradhan Mantri Awas Yojana",
+    "pmKisan": "PM Kisan Samman Nidhi",
+    "pmFasal": "PM Fasal Bima Yojana"
   },
   "common": {
     "loading": "Loading...",

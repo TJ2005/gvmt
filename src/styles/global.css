@@ -1,0 +1,62 @@
+/* Global font size variables */
+:root {
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+}
+
+/* Apply font sizes to common elements */
+body {
+  font-size: var(--font-size-base);
+}
+
+h1 {
+  font-size: var(--font-size-xl);
+}
+
+h2 {
+  font-size: var(--font-size-lg);
+}
+
+h3 {
+  font-size: var(--font-size-md);
+}
+
+p, span, div, button, input, textarea, select {
+  font-size: inherit;
+}
+
+/* MUI overrides */
+.MuiTypography-root {
+  font-size: inherit !important;
+}
+
+.MuiButton-root {
+  font-size: inherit !important;
+}
+
+.MuiMenuItem-root {
+  font-size: inherit !important;
+}
+
+/* Ensure all components inherit font size */
+* {
+  font-size: inherit;
+}
+
+/* Preserve relative sizing for icons */
+.MuiSvgIcon-root {
+  font-size: 1.5rem !important;
+}
+
+/* Ensure form elements maintain proper proportions */
+input, select, textarea {
+  font-size: var(--font-size-base) !important;
+}
+
+/* Ensure buttons maintain proper proportions */
+button {
+  font-size: var(--font-size-base) !important;
+} 

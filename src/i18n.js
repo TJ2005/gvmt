@@ -1,38 +1,29 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
 
-// Import translation files
-import translationEN from './locales/en/translation.json';
-import translationMR from './locales/mr/translation.json';
-
-// Define the resources
-const resources = {
-  en: {
-    translation: translationEN
-  },
-  mr: {
-    translation: translationMR
-  }
-};
-
-// Configure i18next
 i18n
-  // Detect user language
+  .use(Backend)
   .use(LanguageDetector)
-  // Pass the i18n instance to react-i18next
   .use(initReactI18next)
-  // Initialize i18next
   .init({
-    resources,
-    fallbackLng: 'mr', // Default language
-    debug: false, // Set to true for debugging
+    lng: 'mr',
+    fallbackLng: 'mr',
+    debug: true,
     interpolation: {
-      escapeValue: false, // React already escapes values
+      escapeValue: false,
+    },
+    backend: {
+      loadPath: '/locales/{{lng}}/translation.json',
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
+    },
+    react: {
+      useSuspense: true,
+      wait: true
     }
   });
 

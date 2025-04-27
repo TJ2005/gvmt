@@ -80,6 +80,7 @@
     "members": "Members",
     "menu": "Menu",
     "gramPanchayat": "Gram Panchayat",
+    "palaskhedNago": "Palaskhed Nago / Naik",
     "aboutVillage": "About Village",
     "documents": "Documents",
     "gallery": "Gallery",
@@ -87,7 +88,11 @@
     "beneficiaries": "Beneficiaries List",
     "downloads": "Downloads",
     "notices": "Notices & News",
-    "rti": "RTI / Transparency"
+    "rti": "RTI / Transparency",
+    "indianFlag": "Indian Flag",
+    "govtOfIndia": "Government of India",
+    "accessibility": "Accessibility",
+    "regular": "Regular View"
   },
   "footer": {
     "contactInfo": "Contact Information",
