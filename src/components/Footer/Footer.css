@@ -19,35 +19,50 @@
     margin-bottom: 24px;
   }
   
-  /* Footer Logo Section */
-  .footer-logo {
+  /* Footer Logo Section - Using Navbar styles */
+  .footer-section .navbar-logo {
     display: flex;
     align-items: center;
     margin-bottom: 32px;
   }
   
-  .footer-emblem {
+  .footer-section .emblem {
     height: 45px;
     margin-right: 16px;
   }
   
-  .footer-title {
+  .footer-section .navbar-title {
     display: flex;
     flex-direction: column;
   }
+  .navbar-title {
+    gap: 0.4em;
+  }
   
-  .footer-site-title {
+
+  /* Remove the old footer-logo styles since we're using navbar-logo */
+  .footer-logo, .footer-emblem, .footer-title {
+    display: none;
+  }
+  
+  /* Use the same classes as Navbar for consistency */
+  .footer-title .site-title {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 700 !important;
     font-size: 18px !important;
-    font-weight: 500 !important;
-    font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
     color: #000;
     margin-bottom: 4px !important;
   }
   
-  .footer-subtitle {
+  .footer-title .site-subtitle {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 400 !important;
     font-size: 14px !important;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
     color: #666 !important;
-    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
   }
   
   /* Contact Information */
@@ -68,10 +83,18 @@
     line-height: 1.5;
     font-family: 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 500;
+    align-items: center;
   }
   
   .contact-item span strong {
     font-weight: 700;
+  }
+  .contact-item span{
+    display: flex;
+    gap:1px;
+    padding-top: 4px;
+  align-items: flex-start;
+  justify-content: center;
   }
   
   .contact-icon {
@@ -239,6 +262,22 @@
     .footer-links-container .grid-container {
       margin-top: 24px;
     }
+
+    .footer-title .site-title {
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: 700 !important;
+      font-size: 18px !important;
+      line-height: 100% !important;
+      letter-spacing: 0% !important;
+    }
+    
+    .footer-title .site-subtitle {
+      font-family: 'Roboto', sans-serif !important;
+      font-weight: 400 !important;
+      font-size: 14px !important;
+      line-height: 100% !important;
+      letter-spacing: 0% !important;
+    }
   }
   .bar::after {
     content: '';
@@ -256,6 +295,78 @@
 
   .footer-links-container .footer-section {
     margin-bottom: 24px;
+  }
+
+  .mobile-footer-links {
+    display: none;
+    background: #fff;
+    padding: 0;
+  }
+
+  .mobile-footer-links .menu-title {
+    font-family: 'Noto Sans', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #000 !important;
+    text-align: center !important;
+    padding: 15px 0;
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .mobile-footer-links .mobile-links-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .mobile-footer-links .links-group {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .mobile-footer-links .mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 25%;
+  }
+
+  .mobile-footer-links .mobile-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-footer-links .mobile-links a {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .mobile-footer-links .mobile-links a:hover {
+    color: #000;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-footer-links {
+      display: block;
+    }
+    
+    .footer-links-container {
+      display: none;
+    }
   }
 
   

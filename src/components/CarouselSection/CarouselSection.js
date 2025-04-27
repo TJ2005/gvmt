@@ -14,6 +14,42 @@ const images = [
   { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
   { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
   { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  
+  { src: "/assets/images/infinitescrollcarousel/img3.jpeg", alt: "Village Image 3" },
+  { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  
+  { src: "/assets/images/infinitescrollcarousel/img3.jpeg", alt: "Village Image 3" },
+  { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  
+  { src: "/assets/images/infinitescrollcarousel/img3.jpeg", alt: "Village Image 3" },
+  { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  
+  { src: "/assets/images/infinitescrollcarousel/img3.jpeg", alt: "Village Image 3" },
+  { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  
+  { src: "/assets/images/infinitescrollcarousel/img3.jpeg", alt: "Village Image 3" },
+  { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
+  
+  { src: "/assets/images/infinitescrollcarousel/img3.jpeg", alt: "Village Image 3" },
+  { src: "/assets/images/infinitescrollcarousel/img4.jpeg", alt: "Village Image 4" },
+  { src: "/assets/images/infinitescrollcarousel/img1.png", alt: "Village Image 1" },
+  { src: "/assets/images/infinitescrollcarousel/img2.jpeg", alt: "Village Image 2" },
 ];
 
 const CarouselSection = () => {

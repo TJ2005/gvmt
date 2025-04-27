@@ -42,7 +42,8 @@
   .map-contact-link {
     color: #1a73e9;
     text-decoration: underline;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 16px;
   }
   
   .map-image-col {
@@ -96,11 +97,22 @@
     width: 100%;
   }
   
+  .map-contact-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #222;
+  }
+  
   /* Responsive */
   @media (max-width: 900px) {
     .map-flex { 
       flex-direction: column;
       gap: 28px;
+      padding-left: 0;
+      padding-right: 0;
     }
     .map-image-col {
       align-items: flex-start;
@@ -110,5 +122,11 @@
       max-width: 340px;
       height: 180px;
     }
+    .map-contact-text {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      letter-spacing: 0%;
+    }
   }
-  

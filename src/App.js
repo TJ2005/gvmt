@@ -55,23 +55,23 @@ function App() {
       <CssBaseline />
       <Suspense fallback={<LoadingComponent />}>
         <Router>
-          <div className="app-bg">
-            <Navbar />
+    <div className="app-bg">
+      <Navbar />
             <Routes>
               <Route path="/" element={
                 <>
-                  <HeroSection />
-                  <CarouselSection />
-                  <NoticeNewsCards />
-                  <Map />
+      <HeroSection />
+      <CarouselSection />
+      <NoticeNewsCards />
+      <Map />
                 </>
               } />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/members" element={<AboutTeam />} />
               {/* Add more routes as needed */}
             </Routes>
-            <Footer />
-          </div>
+      <Footer />
+    </div>
         </Router>
       </Suspense>
     </ThemeProvider>

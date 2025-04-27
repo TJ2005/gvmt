@@ -144,7 +144,7 @@ const Navbar = () => {
                 <Typography variant="h6" component="div" className="site-title">
                   {t('navbar.gramPanchayat')} {t('navbar.palaskhedNago')}
                 </Typography>
-                <Typography variant="caption" color="text.secondary">
+                <Typography variant="caption" color="text.secondary" className="site-subtitle">
                   Grampanchyat Palaskhed Nago / Naik
                 </Typography>
               </Box>
@@ -272,7 +272,7 @@ const Navbar = () => {
                   <CloseIcon />
                 </IconButton>
               </div>
-              <Typography variant="h6" className="menu-title">
+              <Typography variant="h3" className="menu-title">
                 {t('navbar.menu')}
               </Typography>
             </div>
@@ -280,35 +280,35 @@ const Navbar = () => {
               <div className="links-group">
                 {/* First Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/" onClick={toggleMobileMenu}>{t('navbar.home')}</Button></li>
-                  <li><Button component={Link} to="/about" onClick={toggleMobileMenu}>{t('navbar.about')}</Button></li>
-                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>{t('navbar.governmentSchemes')}</Button></li>
-                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>{t('navbar.contact')}</Button></li>
-                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>{t('navbar.usefulLinks')}</Button></li>
+                  <li><Link to="/" onClick={toggleMobileMenu}>{t('navbar.home')}</Link></li>
+                  <li><Link to="/about" onClick={toggleMobileMenu}>{t('navbar.about')}</Link></li>
+                  <li><Link to="/schemes" onClick={toggleMobileMenu}>{t('navbar.governmentSchemes')}</Link></li>
+                  <li><Link to="/contact" onClick={toggleMobileMenu}>{t('navbar.contact')}</Link></li>
+                  <li><Link to="/useful-links" onClick={toggleMobileMenu}>{t('navbar.usefulLinks')}</Link></li>
                 </ul>
 
                 {/* Second Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/grampanchayat" onClick={toggleMobileMenu}>{t('navbar.gramPanchayat')}</Button></li>
-                  <li><Button component={Link} to="/about-village" onClick={toggleMobileMenu}>{t('navbar.aboutVillage')}</Button></li>
-                  <li><Button component={Link} to="/members" onClick={toggleMobileMenu}>{t('navbar.members')}</Button></li>
-                  <li><Button component={Link} to="/documents" onClick={toggleMobileMenu}>{t('navbar.documents')}</Button></li>
-                  <li><Button component={Link} to="/gallery" onClick={toggleMobileMenu}>{t('navbar.gallery')}</Button></li>
+                  <li><Link to="/grampanchayat" onClick={toggleMobileMenu}>{t('navbar.gramPanchayat')}</Link></li>
+                  <li><Link to="/about-village" onClick={toggleMobileMenu}>{t('navbar.aboutVillage')}</Link></li>
+                  <li><Link to="/members" onClick={toggleMobileMenu}>{t('navbar.members')}</Link></li>
+                  <li><Link to="/documents" onClick={toggleMobileMenu}>{t('navbar.documents')}</Link></li>
+                  <li><Link to="/gallery" onClick={toggleMobileMenu}>{t('navbar.gallery')}</Link></li>
                 </ul>
 
                 {/* Third Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/schemes" onClick={toggleMobileMenu}>{t('navbar.schemes')}</Button></li>
-                  <li><Button component={Link} to="/beneficiaries" onClick={toggleMobileMenu}>{t('navbar.beneficiaries')}</Button></li>
-                  <li><Button component={Link} to="/downloads" onClick={toggleMobileMenu}>{t('navbar.downloads')}</Button></li>
+                  <li><Link to="/schemes" onClick={toggleMobileMenu}>{t('navbar.schemes')}</Link></li>
+                  <li><Link to="/beneficiaries" onClick={toggleMobileMenu}>{t('navbar.beneficiaries')}</Link></li>
+                  <li><Link to="/downloads" onClick={toggleMobileMenu}>{t('navbar.downloads')}</Link></li>
                 </ul>
 
                 {/* Fourth Column */}
                 <ul className="mobile-links">
-                  <li><Button component={Link} to="/contact" onClick={toggleMobileMenu}>{t('navbar.contact')}</Button></li>
-                  <li><Button component={Link} to="/useful-links" onClick={toggleMobileMenu}>{t('navbar.usefulLinks')}</Button></li>
-                  <li><Button component={Link} to="/notices" onClick={toggleMobileMenu}>{t('navbar.notices')}</Button></li>
-                  <li><Button component={Link} to="/rti" onClick={toggleMobileMenu}>{t('navbar.rti')}</Button></li>
+                  <li><Link to="/contact" onClick={toggleMobileMenu}>{t('navbar.contact')}</Link></li>
+                  <li><Link to="/useful-links" onClick={toggleMobileMenu}>{t('navbar.usefulLinks')}</Link></li>
+                  <li><Link to="/notices" onClick={toggleMobileMenu}>{t('navbar.notices')}</Link></li>
+                  <li><Link to="/rti" onClick={toggleMobileMenu}>{t('navbar.rti')}</Link></li>
                 </ul>
               </div>
             </div>

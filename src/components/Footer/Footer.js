@@ -17,21 +17,21 @@ const Footer = () => {
           <Grid container spacing={4}>
             {/* Contact Information Section */}
             <Grid item xs={12} md={3} className="footer-section">
-              <Box className="footer-logo">
+              <div className="navbar-logo">
                 <img
                   src="/assets/icons/national-emblem.svg"
-                  alt="शासकीय चिन्ह"
-                  className="footer-emblem"
+                  alt="Government Emblem"
+                  className="emblem"
                 />
-                <Box className="footer-title">
-                  <Typography variant="h6" component="div" className="footer-site-title">
+                <Box className="navbar-title">
+                  <Typography variant="h6" component="div" className="site-title">
                     ग्रामपंचायत पळसखेड नागो / नाईक
                   </Typography>
-                  <Typography variant="caption" className="footer-subtitle">
+                  <Typography variant="caption" color="text.secondary" className="site-subtitle">
                     Grampanchyat Palaskhed Nago / Naik
                   </Typography>
                 </Box>
-              </Box>
+              </div>
               <Typography variant="h6" className="contact-heading bar">
                 संपर्क:
               </Typography>
@@ -97,8 +97,49 @@ const Footer = () => {
               </Grid>
             </Grid>
           </Grid>
+          {/* Mobile Links - Only visible on mobile */}
+      <div className="mobile-footer-links">
+        <div>
+          <div className="links-group">
+            {/* First Column */}
+            <ul className="mobile-links">
+              <li><Link component={RouterLink} to="/">मुख्यपृष्ठ</Link></li>
+              <li><Link component={RouterLink} to="/about">आमच्याबद्दल</Link></li>
+              <li><Link component={RouterLink} to="/schemes">शासकीय योजना</Link></li>
+              <li><Link component={RouterLink} to="/contact">संपर्क</Link></li>
+              <li><Link component={RouterLink} to="/useful-links">उपयुक्त लिंक</Link></li>
+            </ul>
+
+            {/* Second Column */}
+            <ul className="mobile-links">
+              <li><Link component={RouterLink} to="/grampanchayat">ग्रामपंचायत</Link></li>
+              <li><Link component={RouterLink} to="/about-village">पल्संबंधे</Link></li>
+              <li><Link component={RouterLink} to="/members">ग्रामपंचायत सदस्य</Link></li>
+              <li><Link component={RouterLink} to="/documents">ग्रामपंचायत दस्तऐवज</Link></li>
+              <li><Link component={RouterLink} to="/gallery">गॅलरी</Link></li>
+            </ul>
+
+            {/* Third Column */}
+            <ul className="mobile-links">
+              <li><Link component={RouterLink} to="/schemes">योजना</Link></li>
+              <li><Link component={RouterLink} to="/beneficiaries">लाभार्थी यादी</Link></li>
+              <li><Link component={RouterLink} to="/downloads">फॉर्म डाउनलोड</Link></li>
+            </ul>
+
+            {/* Fourth Column */}
+            <ul className="mobile-links">
+              <li><Link component={RouterLink} to="/contact">संपर्क</Link></li>
+              <li><Link component={RouterLink} to="/useful-links">उपयुक्त लिंक</Link></li>
+              <li><Link component={RouterLink} to="/notices">सूचना फलक / बातम्या</Link></li>
+              <li><Link component={RouterLink} to="/rti">आरटीआय / पारदर्शकता</Link></li>
+            </ul>
+          </div>
         </div>
       </div>
+        </div>
+      </div>
+
+      
 
       {/* Copyright Bar */}
       <div className="copyright-bar">

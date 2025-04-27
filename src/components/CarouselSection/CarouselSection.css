@@ -6,6 +6,7 @@
   
   .carousel-heading {
     font-family: 'Poppins', sans-serif;
+    width: 100%;
     font-weight: 700;
     font-size: var(--font-size-xl);
     color: #5b4b1b;
@@ -119,10 +120,10 @@
   /* Responsive adjustments */
   @media (max-width: 1200px) {
     .scroll-container {
-      height: 300px;
+      height: 100%;
     }
     .scroll-wrapper {
-      height: 300px;
+      height: 100%;
       gap: 16px;
     }
     .carousel-img {
