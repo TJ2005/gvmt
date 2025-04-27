@@ -54,6 +54,7 @@ const images = [
 
 const CarouselSection = () => {
   const scrollRef = useRef(null);
+  
 
   useEffect(() => {
     const scrollElement = scrollRef.current;
