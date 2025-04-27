@@ -225,6 +225,7 @@
 
   /* Responsive Adjustments */
   @media (max-width: 900px) {
+
     .footer-main {
       padding: 32px 0;
     }
