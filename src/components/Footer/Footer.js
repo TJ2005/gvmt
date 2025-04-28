@@ -48,7 +48,7 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <img src="/assets/icons/Communication.svg" alt="ईमेल" className="contact-icon" />
-                <span>{t('footer.email')} <a href="mailto:grampanchyat@gmail.com" className="email-link">grampanchyat@gmail.com</a></span>
+                <span>{t('footer.email')} : <a href="mailto:grampanchyat@gmail.com" className="email-link">grampanchyat@gmail.com</a></span>
               </div>
             </Grid>
 
