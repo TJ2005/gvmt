@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./map.css";
 
 const MAP_IMAGE_URL =
@@ -8,6 +9,8 @@ const GOOGLE_MAPS_LINK =
   "https://www.google.com/maps?q=Palaskhed,Maharashtra,444904";
 
 export default function MapSection() {
+   const { t, i18n } = useTranslation();
+
   return (
     <div className="main-content">
     <div className="map-card">
@@ -17,12 +20,12 @@ export default function MapSection() {
           <div className="map-contact-item">
             <img src="/assets/icons/map.svg" alt="" className="map-icon" />
             <span className="map-contact-text">
-              ग्रामपंचायत पळसखेड नागो / नाईक, बुलढाणा, बुलढाणा - 444904, महाराष्ट्र.
+              {t('footer.villageAddress')} - 444904, {t('footer.state')}.
             </span>
           </div>
           <div className="map-contact-item">
             <img src="/assets/icons/devices.svg" alt="" className="map-icon" />
-            <span className="map-contact-text">दूरध्वनी: 1234567890</span>
+            <span className="map-contact-text">{t('footer.telephone')}: 1234567890</span>
           </div>
           <div className="map-contact-item">
             <img src="/assets/icons/Communication.svg" alt="" className="map-icon" />
@@ -30,7 +33,7 @@ export default function MapSection() {
               href="mailto:grampanchyat@gmail.com"
               className="map-contact-link"
             >
-              ई-मेल: grampanchyat@gmail.com
+              {t('footer.email')}: grampanchyat@gmail.com
             </a>
           </div>
         </div>
@@ -45,7 +48,7 @@ export default function MapSection() {
             className="map-btn"
           >
             <img src="/assets/icons/globe.svg" alt="" className="map-btn-icon" />
-            गुगल मॅप वर पहा
+            {t('common.openInGoogleMap')}
           </a>
         </div>
       </div>

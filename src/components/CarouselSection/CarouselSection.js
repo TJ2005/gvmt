@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./CarouselSection.css";
 
 const images = [
@@ -53,6 +54,7 @@ const images = [
 ];
 
 const CarouselSection = () => {
+  const { t, i18n } = useTranslation();
   const scrollRef = useRef(null);
   
 
@@ -71,7 +73,7 @@ const CarouselSection = () => {
 
   return (
     <div className="carousel-section-outer main-content">
-      <div className="carousel-heading">स्वच्छ, सुंदर - आपलं पळसखेड</div>
+      <div className="carousel-heading">{t('navbar.norm')}</div>
       <div className="scroll-container">
         <div className="scroll-wrapper" ref={scrollRef}>
           {images.map((image, index) => (

@@ -94,7 +94,8 @@
     "accessibility": "Accessibility",
     "regular": "Regular View",
     "village": "Gram Panchayat Palaskhed Nago / Naik",
-    "welcomeMsg": "We welcome you. Always at your service."
+    "welcomeMsg": "We welcome you. Always at your service.",
+    "norm": "Clean, beautiful - our Palaskhed"
   },
   "footer": {
     "home":"Home",
@@ -138,6 +139,11 @@
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",
-    "tryAgain": "Try Again"
+    "tryAgain": "Try Again",
+    "openInGoogleMap": "Open in google map",
+    "notice": "Notice",
+    "noticeHeader": "You will see all notifications by logging in.",
+    "noticeSubHeader": "You will see all the instructions here.",
+    "latestNews": "Latest news"
   }
 } 

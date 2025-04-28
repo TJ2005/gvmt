@@ -26,7 +26,7 @@ const Footer = () => {
                 />
                 <Box className="navbar-title">
                   <Typography variant="h6" component="div" className="site-title">
-                    ग्रामपंचायत पळसखेड नागो / नाईक
+                  {t('navbar.gramPanchayat')} {t('navbar.palaskhedNago')}
                   </Typography>
                   <Typography variant="caption" color="text.secondary" className="site-subtitle">
                     Grampanchyat Palaskhed Nago / Naik

@@ -1,26 +1,31 @@
 import React from 'react';
+import { useTranslation } from "react-i18next";
 import './NoticeCards.css';
 
-const NoticeNewsCards = () => (
-  <div className="cards-row main-content">
-    <div className="card-col">
-      <div className="card-title">सूचना</div>
-      <div className="card-body">
-        तुम्हाला सर्व सूचना लॉग इन द्वारे दिसतील.
-        <div className='section-divider'></div>
-        सर्व सूचना तुम्हाला येथे दिसतील.
-      </div>
-    </div>
-    <div className="card-col">
-      <div className="card-title">ताज्या बातम्या</div>
-      <div className="card-body">
-        तुम्हाला सर्व ताज्या बातम्या लॉग इन द्वारे दिसतील.
-         <div className='section-divider'></div>
+const NoticeNewsCards = () => {
+     const { t, i18n } = useTranslation();
 
-        सर्व ताज्या बातम्या तुम्हाला येथे दिसतील.
+     return(
+      <div className="cards-row main-content">
+        <div className="card-col">
+          <div className="card-title">{t('common.notice')}</div>
+          <div className="card-body">
+          {t('common.noticeHeader')}
+            <div className='section-divider'></div>
+            {t('common.noticeSubHeader')}
+          </div>
+        </div>
+        <div className="card-col">
+          <div className="card-title">{t('common.latestNews')}</div>
+          <div className="card-body">
+          {t('common.noticeHeader')}
+            <div className='section-divider'></div>
+            {t('common.noticeSubHeader')}
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-);
+      )
+ 
+  };
 
 export default NoticeNewsCards;
