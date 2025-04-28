@@ -104,35 +104,35 @@ const Footer = () => {
           <div className="links-group">
             {/* First Column */}
             <ul className="mobile-links">
-              <li><Link component={RouterLink} to="/">मुख्यपृष्ठ</Link></li>
-              <li><Link component={RouterLink} to="/about">आमच्याबद्दल</Link></li>
-              <li><Link component={RouterLink} to="/schemes">शासकीय योजना</Link></li>
-              <li><Link component={RouterLink} to="/contact">संपर्क</Link></li>
-              <li><Link component={RouterLink} to="/useful-links">उपयुक्त लिंक</Link></li>
+              <li><Link component={RouterLink} to="/">{t('navbar.home')}</Link></li>
+              <li><Link component={RouterLink} to="/about">{t('navbar.about')}</Link></li>
+              <li><Link component={RouterLink} to="/schemes">{t('navbar.governmentSchemes')}</Link></li>
+              <li><Link component={RouterLink} to="/contact">{t('navbar.contact')}</Link></li>
+              <li><Link component={RouterLink} to="/useful-links">{t('navbar.usefulLinks')}</Link></li>
             </ul>
 
             {/* Second Column */}
             <ul className="mobile-links">
-              <li><Link component={RouterLink} to="/grampanchayat">ग्रामपंचायत</Link></li>
-              <li><Link component={RouterLink} to="/about-village">पल्संबंधे</Link></li>
-              <li><Link component={RouterLink} to="/members">ग्रामपंचायत सदस्य</Link></li>
-              <li><Link component={RouterLink} to="/documents">ग्रामपंचायत दस्तऐवज</Link></li>
-              <li><Link component={RouterLink} to="/gallery">गॅलरी</Link></li>
+              <li><Link component={RouterLink} to="/grampanchayat">{t('navbar.gramPanchayat')}</Link></li>
+              <li><Link component={RouterLink} to="/about-village">{t('navbar.aboutVillage')}</Link></li>
+              <li><Link component={RouterLink} to="/members">{t('footer.gramPanchayatMember')}</Link></li>
+              <li><Link component={RouterLink} to="/documents">{t('navbar.documents')}</Link></li>
+              <li><Link component={RouterLink} to="/gallery">{t('navbar.gallery')}</Link></li>
             </ul>
 
             {/* Third Column */}
             <ul className="mobile-links">
-              <li><Link component={RouterLink} to="/schemes">योजना</Link></li>
-              <li><Link component={RouterLink} to="/beneficiaries">लाभार्थी यादी</Link></li>
-              <li><Link component={RouterLink} to="/downloads">फॉर्म डाउनलोड</Link></li>
+              <li><Link component={RouterLink} to="/schemes">{t('navbar.schemes')}</Link></li>
+              <li><Link component={RouterLink} to="/beneficiaries">{t('navbar.beneficiaries')}</Link></li>
+              <li><Link component={RouterLink} to="/downloads">{t('navbar.downloads')}</Link></li>
             </ul>
 
             {/* Fourth Column */}
             <ul className="mobile-links">
-              <li><Link component={RouterLink} to="/contact">संपर्क</Link></li>
-              <li><Link component={RouterLink} to="/useful-links">उपयुक्त लिंक</Link></li>
-              <li><Link component={RouterLink} to="/notices">सूचना फलक / बातम्या</Link></li>
-              <li><Link component={RouterLink} to="/rti">आरटीआय / पारदर्शकता</Link></li>
+              <li><Link component={RouterLink} to="/contact">{t('navbar.contact')}</Link></li>
+              <li><Link component={RouterLink} to="/useful-links">{t('footer.usefulLinks')}</Link></li>
+              <li><Link component={RouterLink} to="/notices">{t('navbar.notices')}</Link></li> 
+              <li><Link component={RouterLink} to="/rti">{t('navbar.rti')}</Link></li>
             </ul>
           </div>
         </div>
