@@ -135,6 +135,7 @@ const Navbar = () => {
         <div className="main-content">
           <Toolbar disableGutters className="navbar-toolbar">
             <div className="navbar-logo">
+            <Link to="/" className="navbar-logo" style={{ textDecoration: 'none', color: 'inherit' }}>
               <img
                 src="/assets/icons/national-emblem.svg"
                 alt="Government Emblem"
@@ -148,6 +149,7 @@ const Navbar = () => {
                   Grampanchyat Palaskhed Nago / Naik
                 </Typography>
               </Box>
+            </Link>
             </div>
 
             {/* Desktop Navigation Links */}
