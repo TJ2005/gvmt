@@ -18,13 +18,13 @@ export default function MapSection() {
         {/* Left: Contact Info */}
         <div className="map-contact">
           <div className="map-contact-item">
-            <img src="/assets/icons/map.svg" alt="" className="map-icon" />
+            <img src="/assets/icons/Map.svg" alt="" className="map-icon" />
             <span className="map-contact-text">
               {t('footer.villageAddress')} - 444904, {t('footer.state')}.
             </span>
           </div>
           <div className="map-contact-item">
-            <img src="/assets/icons/devices.svg" alt="" className="map-icon" />
+            <img src="/assets/icons/Devices.svg" alt="" className="map-icon" />
             <span className="map-contact-text">{t('footer.telephone')}: 1234567890</span>
           </div>
           <div className="map-contact-item">

@@ -37,13 +37,13 @@ const Footer = () => {
               {t('footer.contact')}
               </Typography>
               <div className="contact-item">
-                <img src="/assets/icons/map.svg" alt="पत्ता" className="contact-icon" />
+                <img src="/assets/icons/Map.svg" alt="पत्ता" className="contact-icon" />
                 <span>
                 {t('footer.villageAddress')} -<strong>444904</strong>, {t('footer.state')}.
                 </span>
               </div>
               <div className="contact-item">
-                <img src="/assets/icons/devices.svg" alt="फोन" className="contact-icon" />
+                <img src="/assets/icons/Devices.svg" alt="फोन" className="contact-icon" />
                 <span>{t('footer.telephone')} : <strong>1234567890</strong></span>
               </div>
               <div className="contact-item">
