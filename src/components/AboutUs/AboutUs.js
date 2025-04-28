@@ -8,39 +8,6 @@ const AboutUs = () => {
 
   const developmentProjects = t('aboutUs.development.projects', { returnObjects: true });
 
-  // const developmentProjects = [
-  //   {
-  //     title: "तांडा वस्ती सुधार योजना",
-  //     description: "सिमेंट रस्त्याचे बांधकाम व स्वच्छतागृही विकास.",
-  //     image: "/assets/images/projects/project1.png"
-  //   },
-  //   {
-  //     title: "संपूर्ण गावठाणी नळ योजना",
-  //     description: "स्वच्छ पाणी पुरवठा व वितरण व्यवस्था.",
-  //     image: "/assets/images/projects/project2.png"
-  //   },
-  //   {
-  //     title: "शाळा व अंगणवाडी",
-  //     description: "जिल्हा परिषद शाळा व अंगणवाडीला सौंदर्यीकरण व सुविधा.",
-  //     image: "/assets/images/projects/project3.png"
-  //   },
-  //   {
-  //     title: "मुख्य रस्त्याचे बांधकाम",
-  //     description: "पळसखेड नागो काळापूर मुख्य गावा पर्यंत",
-  //     image: "/assets/images/projects/project4.png"
-  //   },
-  //   {
-  //     title: "ग्रामपंचायत इमारत",
-  //     description: "ग्रामपंचायत इमारतीचे सुशोभीकरण व सुरक्षा",
-  //     image: "/assets/images/projects/project5.png"
-  //   },
-  //   {
-  //     title: "इतर विकास कामे",
-  //     description: "मागमंद येथे बकरीचे वसतीगृह, हनुमान मंदिर मोठा योजना, फळबाग योजना",
-  //     image: "/assets/images/projects/project6.png"
-  //   }
-  // ];
-
   return (
     <div className="about-us-container main-content">
       {/* Introduction Section */}

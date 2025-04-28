@@ -1,4 +1,40 @@
 {
+    "aboutTeam": {
+      "members": [
+        {
+          "role": "Sarpanch",
+          "name": "Pooja Amol Ingle"
+        },
+        {
+          "role": "Deputy Sarpanch",
+          "name": "Prakash Ramesh Rathod"
+        },
+        {
+          "role": "Member",
+          "name": "Malti Pravin Rathod"
+        },
+        {
+          "role": "Member",
+          "name": "Bebitai Pravin Rathod"
+        },
+        {
+          "role": "Member",
+          "name": "Hiraman Dhansingh Pawar"
+        },
+        {
+          "role": "Member",
+          "name": "Shubhangi Mahesh Jadhav"
+        },
+        {
+          "role": "Member",
+          "name": "Mukinda Santosh Salve"
+        },
+        {
+          "role": "Gram Panchayat Officer",
+          "name": "Nitin Ingle"
+        }
+      ]
+    },  
   "about": {
     "title": "About Us",
     "villagePopulation": "Village population",
