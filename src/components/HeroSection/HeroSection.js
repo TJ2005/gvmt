@@ -8,7 +8,7 @@ const Slider = () => (
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/assets/images/carousel/carousel1.png"
+          src="/assets/images/carousel/carousel1.jpg"
           alt="First slide"
         />
       </Carousel.Item>
@@ -16,6 +16,13 @@ const Slider = () => (
         <img
           className="d-block w-100"
           src="/assets/images/carousel/carousel2.png"
+          alt="Second slide"
+        />
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/assets/images/carousel/carousel3.jpg"
           alt="Second slide"
         />
       </Carousel.Item>

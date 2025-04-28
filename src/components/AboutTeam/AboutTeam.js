@@ -41,7 +41,7 @@ const AboutTeam = () => {
     {
       role: "ग्रामपंचायत अधिकारी",
       name: "नितीन इंगळे",
-      image: "/assets/images/profiles/profile8.png"
+      image: "/assets/images/profiles/profile8.jpg"
     }
   ];
 
