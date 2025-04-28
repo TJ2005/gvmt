@@ -95,9 +95,11 @@
     "regular": "Regular View"
   },
   "footer": {
+    "home":"Home",
     "contactInfo": "Contact Information",
     "address": "Address",
     "phone": "Phone",
+    "telephone":"Telephone",
     "email": "Email",
     "website": "Website",
     "quickLinks": "Quick Links",
@@ -120,7 +122,10 @@
     "gallery": "Gallery",
     "downloads": "Downloads",
     "notices": "Notices & News",
-    "rti": "RTI / Transparency"
+    "rti": "RTI / Transparency",
+    "gramPanchayatMember": "Gram Panchayat Member",
+    "villageAddress":"Gram Panchayat Palaskhed Nago / Naik, Buldhana, Buldhana,",
+    "state":"Maharashtra"
   },
   "schemes": {
     "mjpScheme": "Mahatma Jyotiba Phule Scheme",

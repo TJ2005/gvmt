@@ -8,7 +8,8 @@ import "./Footer.css";
 import { useTranslation } from "react-i18next";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
 
   return (
     <footer className="footer">
@@ -33,21 +34,21 @@ const Footer = () => {
                 </Box>
               </div>
               <Typography variant="h6" className="contact-heading bar">
-                संपर्क:
+              {t('footer.contact')}
               </Typography>
               <div className="contact-item">
                 <img src="/assets/icons/map.svg" alt="पत्ता" className="contact-icon" />
                 <span>
-                  ग्रामपंचायत पळसखेड नागो / नाईक, बुलढाणा, बुलढाणा, -<strong>444904</strong>, महाराष्ट्र.
+                {t('footer.villageAddress')} -<strong>444904</strong>, {t('footer.state')}.
                 </span>
               </div>
               <div className="contact-item">
                 <img src="/assets/icons/devices.svg" alt="फोन" className="contact-icon" />
-                <span>दूरध्वनी: <strong>1234567890</strong></span>
+                <span>{t('footer.telephone')} : <strong>1234567890</strong></span>
               </div>
               <div className="contact-item">
                 <img src="/assets/icons/Communication.svg" alt="ईमेल" className="contact-icon" />
-                <span>ई-मेल: <a href="mailto:grampanchyat@gmail.com" className="email-link">grampanchyat@gmail.com</a></span>
+                <span>{t('footer.email')} <a href="mailto:grampanchyat@gmail.com" className="email-link">grampanchyat@gmail.com</a></span>
               </div>
             </Grid>
 
@@ -57,41 +58,41 @@ const Footer = () => {
                 {/* Quick Links */}
                 <Grid item xs={12} sm={6} md={3} className="footer-section">
                   <ul className="footer-links">
-                    <li><Link component={RouterLink} to="/">मुख्यपृष्ठ</Link></li>
-                    <li><Link component={RouterLink} to="/about">आमच्याबद्दल</Link></li>
-                    <li><Link component={RouterLink} to="/schemes">शासकीय योजना</Link></li>
-                    <li><Link component={RouterLink} to="/contact">संपर्क</Link></li>
-                    <li><Link component={RouterLink} to="/useful-links">उपयुक्त लिंक</Link></li>
+                    <li><Link component={RouterLink} to="/">{t('footer.home')}</Link></li>
+                    <li><Link component={RouterLink} to="/about">{t('footer.aboutUs')}</Link></li>
+                    <li><Link component={RouterLink} to="/schemes">{t('navbar.governmentSchemes')}</Link></li>
+                    <li><Link component={RouterLink} to="/contact">{t('navbar.contact')}</Link></li>
+                    <li><Link component={RouterLink} to="/useful-links">{t('footer.usefulLinks')}</Link></li>
                   </ul>
                 </Grid>
 
                 {/* Grampanchayat Links */}
                 <Grid item xs={12} sm={6} md={3} className="footer-section">
                   <ul className="footer-links">
-                    <li><Link component={RouterLink} to="/grampanchayat">ग्रामपंचायत</Link></li>
-                    <li><Link component={RouterLink} to="/about-village">पल्संबंधे</Link></li>
-                    <li><Link component={RouterLink} to="/members">ग्रामपंचायत सदस्य</Link></li>
-                    <li><Link component={RouterLink} to="/documents">ग्रामपंचायत दस्तऐवज</Link></li>
-                    <li><Link component={RouterLink} to="/gallery">गॅलरी</Link></li>
+                    <li><Link component={RouterLink} to="/grampanchayat">{t('navbar.gramPanchayat')}</Link></li>
+                    <li><Link component={RouterLink} to="/about-village">{t('navbar.aboutVillage')}</Link></li>
+                    <li><Link component={RouterLink} to="/members">{t('footer.gramPanchayatMember')}</Link></li>
+                    <li><Link component={RouterLink} to="/documents">{t('navbar.documents')}</Link></li>
+                    <li><Link component={RouterLink} to="/gallery">{t('footer.gallery')}</Link></li>
                   </ul>
                 </Grid>
 
                 {/* Schemes Links */}
                 <Grid item xs={12} sm={6} md={3} className="footer-section">
                   <ul className="footer-links">
-                    <li><Link component={RouterLink} to="/schemes">योजना</Link></li>
-                    <li><Link component={RouterLink} to="/beneficiaries">लाभार्थी यादी</Link></li>
-                    <li><Link component={RouterLink} to="/downloads">फॉर्म डाउनलोड</Link></li>
+                    <li><Link component={RouterLink} to="/schemes">{t('navbar.schemes')}</Link></li>
+                    <li><Link component={RouterLink} to="/beneficiaries">{t('navbar.beneficiaries')}</Link></li>
+                    <li><Link component={RouterLink} to="/downloads">{t('navbar.downloads')}</Link></li>
                   </ul>
                 </Grid>
 
                 {/* Info Links */}
                 <Grid item xs={12} sm={6} md={3} className="footer-section">
                   <ul className="footer-links">
-                    <li><Link component={RouterLink} to="/contact">संपर्क</Link></li>
-                    <li><Link component={RouterLink} to="/useful-links">उपयुक्त लिंक</Link></li>
-                    <li><Link component={RouterLink} to="/notices">सूचना फलक / बातम्या</Link></li>
-                    <li><Link component={RouterLink} to="/rti">आरटीआय / पारदर्शकता</Link></li>
+                    <li><Link component={RouterLink} to="/contact">{t('navbar.contact')}</Link></li>
+                    <li><Link component={RouterLink} to="/useful-links">{t('footer.usefulLinks')}</Link></li>
+                    <li><Link component={RouterLink} to="/notices">{t('navbar.notices')}</Link></li>
+                    <li><Link component={RouterLink} to="/rti">{t('navbar.rti')}</Link></li>
                   </ul>
                 </Grid>
               </Grid>
