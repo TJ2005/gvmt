@@ -148,13 +148,13 @@ const Footer = () => {
           <div className="copyright-content">
             <div className="copyright-left">
               <Typography variant="body2">
-                ©2025 ग्रामपंचायत पळसखेड नागो / नाईक, बुलढाणा. सर्व हक्क राखीव.
+                ©2025 {t('footer.copyright')}
               </Typography>
             </div>
             <div className="copyright-right">
-              <Link href="#" className="footer-policy-link">नियम व अटी</Link>
+              <Link href="#" className="footer-policy-link">{t('footer.termsAndConditions')}</Link>
               <div className="copyright-divider"></div>
-              <Link href="#" className="footer-policy-link">गोपनीयता धोरण</Link>
+              <Link href="#" className="footer-policy-link">{t('footer.privacyPolicy')}</Link>
             </div>
           </div>
         </div>
