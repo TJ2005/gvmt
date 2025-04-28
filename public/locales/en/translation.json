@@ -1,6 +1,7 @@
 {
   "about": {
     "title": "About Us",
+    "villagePopulation": "Village population",
     "description": "Grampanchayat Palaskhed Nago/Naik, located in Paithan Taluka of Aurangabad District, is a progressive village under the Zilla Parishad. With a population of approximately 1500 and 200 households, our village represents a thriving democratic community.",
     "population": {
       "total": "Total Population",
@@ -9,6 +10,12 @@
     "households": {
       "total": "Total Households",
       "value": "200"
+    },
+    "cat": {
+      "male": "Male",
+      "maleValue": "750",
+      "female": "Female",
+      "femaleValue": "750"
     },
     "area": {
       "total": "Total Area",
@@ -51,8 +58,11 @@
       "title": "Village Administration",
       "sarpanch": "Sarpanch",
       "deputySarpanch": "Deputy Sarpanch",
+      "deputySarpanchName": "Prakash Ramesh Rathod",
       "gramsevak": "Gram Sevak",
-      "talathi": "Talathi"
+      "talathi": "Talathi",
+      "gramPanchayatOfficer": "Gram Panchayat Officer",
+      "gramPanchayatOfficerName" : "Nitin Ingle"
     },
     "projects": {
       "title": "Development Projects",
@@ -64,6 +74,36 @@
     "note": {
       "title": "Note from Administration",
       "content": "We are committed to the development and welfare of our village. Through various initiatives and projects, we aim to improve the quality of life for all residents while preserving our cultural heritage."
+    },
+    "development" : {
+      "title" : "Development works",
+      "tagLine": "Gram Panchayat Palaskhed Nago / Naik is becoming a well-developed, clean and beautiful village. Our main responsibilities are the welfare of the citizens, sustainable development and transparent administration.",
+      "projects": [
+        {
+          "title": "Tanda Settlement Improvement Scheme",
+          "description": "Construction of cement roads and sanitation development."
+        },
+        {
+          "title": "Complete Village Water Supply Scheme",
+          "description": "Clean water supply and distribution system."
+        },
+        {
+          "title": "School and Anganwadi",
+          "description": "Beautification and facilities for Zilla Parishad School and Anganwadi."
+        },
+        {
+          "title": "Main Road Construction",
+          "description": "Palaskhed Nago to Kalapur main village road."
+        },
+        {
+          "title": "Gram Panchayat Building",
+          "description": "Beautification and security of Gram Panchayat building."
+        },
+        {
+          "title": "Other Development Works",
+          "description": "Goat shelter at Magmand, Hanuman Temple Major Project, Orchard Project."
+        }
+      ]
     }
   },
   "navbar": {
@@ -78,6 +118,7 @@
     "helpline": "Helpline Number",
     "introduction": "Introduction",
     "members": "Members",
+    "membersName": "Malti Praveen Rathod, Babytai Praveen Rathod, Hiraman Dhansingh Pawar, Shubhangi Mahesh Jadhav, Mukinda Santosh Salve",
     "menu": "Menu",
     "gramPanchayat": "Gram Panchayat",
     "palaskhedNago": "Palaskhed Nago / Naik",

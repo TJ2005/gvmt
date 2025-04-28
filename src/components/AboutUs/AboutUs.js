@@ -6,104 +6,104 @@ import { Typography } from '@mui/material';
 const AboutUs = () => {
   const { t } = useTranslation();
 
-  const developmentProjects = [
-    {
-      title: "तांडा वस्ती सुधार योजना",
-      description: "सिमेंट रस्त्याचे बांधकाम व स्वच्छतागृही विकास.",
-      image: "/assets/images/projects/project1.png"
-    },
-    {
-      title: "संपूर्ण गावठाणी नळ योजना",
-      description: "स्वच्छ पाणी पुरवठा व वितरण व्यवस्था.",
-      image: "/assets/images/projects/project2.png"
-    },
-    {
-      title: "शाळा व अंगणवाडी",
-      description: "जिल्हा परिषद शाळा व अंगणवाडीला सौंदर्यीकरण व सुविधा.",
-      image: "/assets/images/projects/project3.png"
-    },
-    {
-      title: "मुख्य रस्त्याचे बांधकाम",
-      description: "पळसखेड नागो काळापूर मुख्य गावा पर्यंत",
-      image: "/assets/images/projects/project4.png"
-    },
-    {
-      title: "ग्रामपंचायत इमारत",
-      description: "ग्रामपंचायत इमारतीचे सुशोभीकरण व सुरक्षा",
-      image: "/assets/images/projects/project5.png"
-    },
-    {
-      title: "इतर विकास कामे",
-      description: "मागमंद येथे बकरीचे वसतीगृह, हनुमान मंदिर मोठा योजना, फळबाग योजना",
-      image: "/assets/images/projects/project6.png"
-    }
-  ];
+  const developmentProjects = t('aboutUs.development.projects', { returnObjects: true });
+
+  // const developmentProjects = [
+  //   {
+  //     title: "तांडा वस्ती सुधार योजना",
+  //     description: "सिमेंट रस्त्याचे बांधकाम व स्वच्छतागृही विकास.",
+  //     image: "/assets/images/projects/project1.png"
+  //   },
+  //   {
+  //     title: "संपूर्ण गावठाणी नळ योजना",
+  //     description: "स्वच्छ पाणी पुरवठा व वितरण व्यवस्था.",
+  //     image: "/assets/images/projects/project2.png"
+  //   },
+  //   {
+  //     title: "शाळा व अंगणवाडी",
+  //     description: "जिल्हा परिषद शाळा व अंगणवाडीला सौंदर्यीकरण व सुविधा.",
+  //     image: "/assets/images/projects/project3.png"
+  //   },
+  //   {
+  //     title: "मुख्य रस्त्याचे बांधकाम",
+  //     description: "पळसखेड नागो काळापूर मुख्य गावा पर्यंत",
+  //     image: "/assets/images/projects/project4.png"
+  //   },
+  //   {
+  //     title: "ग्रामपंचायत इमारत",
+  //     description: "ग्रामपंचायत इमारतीचे सुशोभीकरण व सुरक्षा",
+  //     image: "/assets/images/projects/project5.png"
+  //   },
+  //   {
+  //     title: "इतर विकास कामे",
+  //     description: "मागमंद येथे बकरीचे वसतीगृह, हनुमान मंदिर मोठा योजना, फळबाग योजना",
+  //     image: "/assets/images/projects/project6.png"
+  //   }
+  // ];
 
   return (
     <div className="about-us-container main-content">
       {/* Introduction Section */}
       <div className="section-heading">
-        <h2>आमच्याबद्दल</h2>
+        <h2>{t('about.title')}</h2>
       </div>
 
       {/* Statistics */}
       <div className="stats-section">
         <div className="stat-item">
           <Typography variant="h6">
-            <span>गावाची लोकसंख्या</span> : १५००
+            <span>{t('about.villagePopulation')}</span> : {t('about.population.value')}
           </Typography>
           <Typography variant="h6">
-            <span>स्त्री</span> : ७५०
+            <span>{t('about.cat.male')}</span> : {t('about.cat.maleValue')}
           </Typography>
           <Typography variant="h6">
-            <span>पुरुष</span> : ७५०
+            <span> {t('about.cat.female')}</span> :  {t('about.cat.femaleValue')}
           </Typography>
           <Typography variant="h6">
-            <span>एकूण घरे</span> : २००
+            <span>{t('about.households.total')}</span> : {t('about.households.value')}
           </Typography>
         </div>
       </div>
 
       <div className="description-section">
-        
-          ग्रामपंचायत पळसखेड नागो / नाईक, तालुका पंचायत समिती बुलढाणा, जिल्हा परिषद बुलढाणा अंतर्गत येणारे एक प्रगतशील व विकासाभिमुख गाव आहे. सुमारे १५०० लोकसंख्या असलेल्या या गावात सुमारे २०० घरे असून एकूण ३ वॉर्ड आणि ७ सदस्यांची ग्रामपंचायत कार्यरत आहे.
-        
+      {t('about.description')}
       </div>
 
       {/* Administration Section */}
       <div className="section-heading">
-        <h2>प्रशासकीय रचना</h2>
+        <h2>{t('about.administration.title')}</h2>
       </div>
 
       <div className="admin-section">
         <div className="admin-item">
-          <Typography className="admin-title">सरपंच :</Typography>
-          <Typography className="admin-value">पूजा अमोल इंगळे</Typography>
+          <Typography className="admin-title">{t('about.administration.sarpanch')} :</Typography>
+          <Typography className="admin-value">{t('about.administration.sarpanchName')}</Typography>
         </div>
         <div className="admin-item">
-          <Typography className="admin-title">उपसरपंच :</Typography>
-          <Typography className="admin-value">प्रकाश रमेश राठोड</Typography>
+          <Typography className="admin-title">{t('aboutUs.administration.deputySarpanch')} :</Typography>
+          <Typography className="admin-value">{t('aboutUs.administration.deputySarpanchName')}</Typography>
         </div>
         <div className="admin-item">
-          <Typography className="admin-title">सदस्य :</Typography>
-          <Typography className="admin-value">मालती प्रवीण राठोड, बेबीताई प्रवीण राठोड, हिरामण धनसिंग पवार, शुभांगी महेश जाधव, मुकिंदा संतोष साळवे</Typography>
+          <Typography className="admin-title">{t('navbar.members')} :</Typography>
+          <Typography className="admin-value">{t('navbar.membersName')}</Typography>
         </div>
         <div className="admin-item">
-          <Typography className="admin-title">ग्रामपंचायत अधिकारी :</Typography>
-          <Typography className="admin-value">नितीन इंगळे</Typography>
+          <Typography className="admin-title">{t('aboutUs.administration.gramPanchayatOfficer')} :</Typography>
+          <Typography className="admin-value">{t('aboutUs.administration.gramPanchayatOfficerName')}</Typography>
         </div>
       </div>
 
       {/* Development Projects Section */}
       <div className="section-heading">
-        <h2>विकासकामे</h2>
+        <h2>{t('aboutUs.development.title')}</h2>
       </div>
 
       <div className="projects-wrapper">
         <div className="projects-grid">
           {developmentProjects.map((project, index) => (
             <div className="project-card" key={index}>
-              <img src={project.image} alt={project.title} className="project-image" />
+              <img src={`/assets/images/projects/project${index + 1}.png`} alt={project.title} className="project-image" />
               <div className="project-content">
                 <div className="project-title">{project.title}</div>
                 <div className="project-description">{project.description}</div>
@@ -116,7 +116,7 @@ const AboutUs = () => {
       {/* Note Section */}
       <div className="note-section">
         <Typography className="note-text">
-          ग्रामपंचायत पळसखेड नागो / नाईक हे गाव सर्वतोपरी प्रगत व स्वच्छ, सुंदर गाव म्हणून नावारूपास येत आहे. नागरिकांचे हित, शाश्वत विकास व पारदर्शक प्रशासन या आमच्या मुख्य जबाबदाऱ्या आहेत.
+          {t('aboutUs.development.tagLine')}
         </Typography>
       </div>
     </div>
