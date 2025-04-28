@@ -92,7 +92,9 @@
     "indianFlag": "Indian Flag",
     "govtOfIndia": "Government of India",
     "accessibility": "Accessibility",
-    "regular": "Regular View"
+    "regular": "Regular View",
+    "village": "Gram Panchayat Palaskhed Nago / Naik",
+    "welcomeMsg": "We welcome you. Always at your service."
   },
   "footer": {
     "home":"Home",

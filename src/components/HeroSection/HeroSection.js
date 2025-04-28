@@ -1,9 +1,13 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import { useTranslation } from "react-i18next";
 import './HeroSection.css';
 
-const Slider = () => (
-  <div className="carousel-fullwidth main-content">
+const Slider = () => {
+  const { t, i18n } = useTranslation();
+
+  return(
+    <div className="carousel-fullwidth main-content">
     <Carousel interval={5000} controls indicators>
       <Carousel.Item>
         <img
@@ -29,13 +33,14 @@ const Slider = () => (
     </Carousel>
     <div className="carousel-overlay">
           <div className="carousel-title">
-            ग्रामपंचायत पळसखेड नागो / नाईक
+          {t('navbar.village')}
           </div>
           <div className="carousel-subtitle">
-            आपले सहर्ष स्वागत करत आहे. नेहमी आपल्या सेवेत हजर.
+            {t('navbar.welcomeMsg')}
           </div>
         </div>
   </div>
-);
+  )
+};
 
 export default Slider;
